@@ -1,0 +1,26 @@
+<div itemtype="http://schema.org/Offer" id="item_%itemId(INT PRIMARY KEY)">
+	<div itemtype="http://schema.org/Residence">
+		<div class="cat_geo clean_links item-location">
+			<span class="subject-param category">
+				%itemLocation1
+			</span>
+			<span class="subject-param address separator">
+				%itemLocation2
+			</span>
+		</div>
+		<h4 class="media-heading">
+			<a class="item_link" href=%itemLink:item.xml>
+				%itemTitle
+			</a>
+		</h4>
+		
+		<div class="details">
+		    <span class="li_detail_params first rooms">%itemRooms</span>
+		    <span class="li_detail_params monthly_rent">%itemPrice</span>
+		    <span class="li_detail_params size">%itemArea</span>
+	    </div>
+    	
+    	<time class="jlist_date_image" datetime="%itemTime"> 
+    	</time>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+<img class="landscape" src="%itemImage%" alt="">
+<span style="font-size: 39px;">%itemPrice</span>
+<p class="object-text">%itemDescription</p>
+<ul class="body-links">
+	<h3 class="h5">%itemAddress</h3>
+</ul>
+<div class="col-xs-12">
+	<h2 class="h4">%itemUser</h2>
+</div>
+<button id="phonenumber-btn" class="btn btn-primary btn-icon btn-block" data-phonehash="%itemPhoneHash" data-href="%itemPhoneLink:phone.xml?h=$itemPhoneHash">
+</button>

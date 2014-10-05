@@ -1,0 +1,2 @@
+var i = document.createElement("img");
+i.src = "http://eu.npario-inc.net/DMP/0.gif?ck=C610&src=emd&eas_uid=1408036788586685032";

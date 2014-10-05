@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0138)http://www.blocket.se/gallery_real_estate.html?ca=14&base_parent=3000&parent=3000&category=3020&parent_appl=vi&w=1#verticals_banner_bostad -->
+<html id="" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="sv_SE"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Blocket.se</title>
+<link rel="shortcut icon" href="http://www.blocket.com/img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="http://www.blocket.com/img/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://www.blocket.com/img/touch-icon-iphone-retina.png">
+
+
+
+<link href="blocket_clean.css" rel="stylesheet" type="text/css">
+
+<link href="blocket_list.css" rel="stylesheet" type="text/css">
+
+
+ 
+<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+
+<script src="common.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+var fif = {
+	getSize: function(settings) {
+		"use strict";
+		settings = settings || {};
+		var width = settings.width ? settings.width : Math.max(document.body.scrollWidth, document.body.clientWidth);
+		var height = settings.height ? settings.height : Math.max(document.body.scrollHeight, document.body.clientHeight);
+
+		if (width < "20" || height < "20") {
+			return false;
+		}
+
+		return {
+			width: width,
+			height: height
+		};
+	},
+	resize_height_ondemand: function(target_element, settings) {
+		"use strict";
+		settings = settings || {};
+
+		if (typeof target_element === 'object') {
+			var o = {
+				width: Math.max(document.body.scrollWidth, document.body.clientWidth),
+				height: target_element.clientHeight,
+				settings: settings
+			}
+			fif.sendpost(o);
+		}
+	},
+	resize: function(settings) {
+		"use strict";
+		settings = settings || {};
+		var that = this;
+
+		// Listen for a reply from the parent frame to make sure that everything
+		// worked and we can stop sending messages.
+		var handle_reply = function(event) {
+			var data = JSON.parse(event.data);
+			if (data.success === true) {
+				clearInterval(that.interval);
+			}
+		}
+
+		if (window.addEventListener) {
+			window.addEventListener("message", handle_reply, false);
+		} else if (window.attachEvent) {
+			window.attachEvent("onmessage", handle_reply);
+		}
+		this.interval = setInterval(function() {
+			var o = that.getSize(settings);
+
+			if (typeof o === "object") {
+				o.settings = settings;
+				fif.sendpost(o);
+			}
+			if (fif.tries-- < 0) {
+				clearInterval(that.interval);
+			}
+		}, 100);
+	},
+	tries: 30,
+	sendpost: function(o) {
+		"use strict";
+		if (typeof o === "object") {
+			o.func = "resize_iframe";
+			if (fif.target !== undefined) {
+				o.target = fif.target;
+			} else {
+				o.target = location.hash;
+			}
+			window.parent.postMessage(JSON.stringify(o), "http://www.blocket.se");
+		}
+	},
+}
+
+
+</script>
+</head>
+<body class="body-clean chrome chrome_36" onload="fif.resize();" marginwidth="0" marginheight="0">
+<div id="blocket-clean"><div id="vi">
+	<div id="eframe_container">
+		<div id="bostad_puff" class="box_space">
+			<div id="gallery_header" class="bostad_puff_header">
+				<a class="bostad_link xiti_link" target="_top" href="http://blocket.se/bostad?ca=14">
+					<img class="bostad_puff_logo" src="puff_logo.png" alt="blocket.se/bostad" width="72" height="18">
+				</a>
+			</div>
+			
+				
+				
+			
+			
+		
+	
+	
+	
+	<div class="gallery_body" id="gallery_body">
+<p class="count_row header">
+
+<a href="http://www.blocket.se/bostad/saljes/ostergotland" rel="http://logc89.xiti.com/go.ad?xts=379341&amp;atc=INT-402-[bostad_verticals_banner_vi_pop]||&amp;type=AT&amp;url=" class="xiti_link count_link">Alla bostäder</a><span class="price_nr">, 41422</span>
+
+</p>
+
+	
+	
+	
+<div class="gallery_item first">
+<a target="_top" rel="http://logc89.xiti.com/go.ad?xts=379341&amp;atc=INT-402-[bostad_verticals_banner_vi_pop]||&amp;type=AT&amp;url=" href="http://www.blocket.se/ostergotland/Bersbo_By_2__Atvidaberg_55704918.htm?ca=14" class="set_sq xiti_link" data-sq="ca=14&amp;st=s&amp;sb=b&amp;cg=3040" data-buffy="vi_rightbar|pop|55704918">
+<img class="gallery_image" src="0707103489.jpg" alt="Bersbo By 2, Åtvidaberg" title="Bersbo By 2, Åtvidaberg">
+</a>
+<div class="item_details">
+<p class="subject item_info">
+<a target="_top" rel="http://logc89.xiti.com/go.ad?xts=379341&amp;atc=INT-402-[bostad_verticals_banner_vi_pop]||&amp;type=AT&amp;url=" href="http://www.blocket.se/ostergotland/Bersbo_By_2__Atvidaberg_55704918.htm?ca=14" class="set_sq puff_link xiti_link" data-sq="ca=14&amp;st=s&amp;sb=b&amp;cg=3040" data-buffy="vi_rightbar|pop|55704918">
+Bersbo By 2,<span class="span_break"> </span> Åtvidaberg</a>
+</p>
+
+<p class="item_info">
+
+695 000:-
+
+</p>
+
+</div>
+</div>
+
+	
+
+
+	
+	
+	
+<div class="gallery_item ">
+<a target="_top" rel="http://logc89.xiti.com/go.ad?xts=379341&amp;atc=INT-402-[bostad_verticals_banner_vi_pop]||&amp;type=AT&amp;url=" href="http://www.blocket.se/ostergotland/Marasvagen_3__Linkoping_55703819.htm?ca=14" class="set_sq xiti_link" data-sq="ca=14&amp;st=s&amp;sb=b&amp;cg=3100" data-buffy="vi_rightbar|pop|55703819">
+<img class="gallery_image" src="0852237869.jpg" alt="Maråsvägen 3, Linköping" title="Maråsvägen 3, Linköping">
+</a>
+<div class="item_details">
+<p class="subject item_info">
+<a target="_top" rel="http://logc89.xiti.com/go.ad?xts=379341&amp;atc=INT-402-[bostad_verticals_banner_vi_pop]||&amp;type=AT&amp;url=" href="http://www.blocket.se/ostergotland/Marasvagen_3__Linkoping_55703819.htm?ca=14" class="set_sq puff_link xiti_link" data-sq="ca=14&amp;st=s&amp;sb=b&amp;cg=3100" data-buffy="vi_rightbar|pop|55703819">
+Maråsvägen 3,<span class="span_break"> </span> Linköping</a>
+</p>
+
+<p class="item_info">
+
+2 650 000:-
+
+</p>
+
+</div>
+</div>
+
+	
+
+</div>
+<img id="impression_counter" src="get.ad" alt="blocket.se/bostad" class="hidden">
+<script type="text/javascript">
+function count_impression() {
+	jQuery("#impression_counter").attr("src", "http://logc89.xiti.com/get.ad?xts=379341&ati=INT-402-[bostad_verticals_banner_vi_pop]||&type=AT&rn=1260018396&url=http://www.blocket.se/img/transparent.gif");
+}
+</script>
+<script type="text/javascript" src="xtcore.js"></script>
+<script type="text/javascript">
+jQuery(function() {
+	jQuery('a.xiti_link').click(function(e) {
+		var buffyData = this.getAttribute('data-buffy');
+		if (buffyData) {
+			document.cookie = "buffy=" + buffyData + "; path=/;domain=."+document.domain;
+		}
+		e.preventDefault();
+		e.stopPropagation();
+		jQuery(this).attr("href" , ("http://logc89.xiti.com/go.ad?xts=379341&atc=INT-402-[bostad_verticals_banner_vi_pop]||&type=AT&url=" + jQuery(this).attr('href')) ).attr("rel","");
+		top.location.href = "" + jQuery(this).attr('href');
+	});
+});
+</script>
+
+
+		<!-- tracking -->
+		<script type="text/javascript">
+		(function() {
+			var links = document.getElementsByTagName("a");
+			
+			for (var i=0; i < links.length; i++) {
+				links[i].onclick = function(){ document.cookie = "puff_click=" + escape("triplebanner-vi-pop,") + "; path=/"; }
+			}
+		})();
+		</script>
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+</div></div>
+
+
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+blocket.init.clean();
+
+});
+</script>
+
+
+<!-- js_globals new -->
+
+<script type="text/javascript">
+
+
+
+	blocket('@params').extend({
+		application : "",
+		
+		regress : 0,
+		
+		protocol : "http"
+	});
+
+</script>
+
+<script type="text/javascript" src="arrays_v2.js"></script>
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+
+<!-- 2014-08-26 18:40:18 sbw11 5170 -->
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>

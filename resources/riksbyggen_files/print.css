@@ -1,0 +1,77 @@
+﻿body,h1,h2,h3,h4,p,ul,li {
+	background:#fff;
+	color:#333 !important;
+	letter-spacing:normal;
+}
+#topLogo {
+	left:0;
+	position:static;
+}
+.NoPrint {
+	display:none;
+}
+.ContentWrapper {
+	background:#fff;
+	margin:0;
+	width:720px;
+}
+.StartPageTeaser{
+	width:46%;
+	padding-left:0;
+}
+/* Objektlistningar */
+.SearchArea h1.Red {
+	padding:0;
+}
+.ProjectListingContent .FilterAccomodationType,
+.ProjectTableView .ProjectList th:first-child,
+.ProjectTableView .ProjectList .ProjectListRow .ProjectLocation,
+.ProjectObjectList .ObjectList .ObjectListRow td:first-child {
+	padding-left:0;
+}
+.ProjectObjectList .ObjectList th:first-child {
+	width:115px;
+	padding-left:0;
+}
+.ProjectTableView .ProjectList th:first-child {
+	width:150px;
+}
+.ProjectTableView .ObjectList th:first-child + th {
+	width:130px;
+}
+.ProjectTableView .ObjectList th:first-child + th + th {
+	width:50px;
+}
+.ProjectTableView .ObjectList th:first-child + th + th + th, 
+.ProjectTableView .ObjectList th:first-child + th + th + th + th {
+	width:40px;
+}
+.ProjectListingContent ul li {
+	border-bottom:solid 2px #c6c6c6;
+}
+projectMainColumn h1.Left {
+	float:none;
+}
+
+/* Objektpres. */
+.ObjectInfo {
+	float:none;
+	position:static;
+	width:auto;
+}
+/* Flikar */
+ul.InnerTabMenu li.Selected {
+	border:solid 1px #c6c6c6;
+	border-bottom:solid 1px #fff;
+	margin:0 0 -1px;
+}
+
+/* utskrifts-datum */
+#dateToday {
+	padding:5px 5px 5px 0;
+	margin:0 15px 0 0;
+	color:#555;
+	font-size:0.923em;
+	text-align:right;
+	display:block;
+}

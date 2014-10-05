@@ -1,0 +1,41 @@
+Type.registerNamespace('RBExtern.WebHandlers');
+RBExtern.WebHandlers.HandleSearchSlides=function() {
+RBExtern.WebHandlers.HandleSearchSlides.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+RBExtern.WebHandlers.HandleSearchSlides.prototype={
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return RBExtern.WebHandlers.HandleSearchSlides._staticInstance.get_path();},
+GetSearchResult:function(projectIDs,arrSlideValues,arrObjProperties,readyToMoveIn,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetSearchResult',false,{projectIDs:projectIDs,arrSlideValues:arrSlideValues,arrObjProperties:arrObjProperties,readyToMoveIn:readyToMoveIn},succeededCallback,failedCallback,userContext); },
+GetProjects:function(countyId,arrMunicipalityIDs,arrTypeIDs,arrTenureStatusIDs,categoryId,readyToMoveIn,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetProjects',false,{countyId:countyId,arrMunicipalityIDs:arrMunicipalityIDs,arrTypeIDs:arrTypeIDs,arrTenureStatusIDs:arrTenureStatusIDs,categoryId:categoryId,readyToMoveIn:readyToMoveIn},succeededCallback,failedCallback,userContext); },
+GetMunicipality:function(countyId,bigCityId,bigCity,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetMunicipality',false,{countyId:countyId,bigCityId:bigCityId,bigCity:bigCity},succeededCallback,failedCallback,userContext); },
+GetAllMunicipalities:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetAllMunicipalities',false,{},succeededCallback,failedCallback,userContext); },
+IsAllProjectsCached:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'IsAllProjectsCached',false,{},succeededCallback,failedCallback,userContext); }}
+RBExtern.WebHandlers.HandleSearchSlides.registerClass('RBExtern.WebHandlers.HandleSearchSlides',Sys.Net.WebServiceProxy);
+RBExtern.WebHandlers.HandleSearchSlides._staticInstance = new RBExtern.WebHandlers.HandleSearchSlides();
+RBExtern.WebHandlers.HandleSearchSlides.set_path = function(value) { RBExtern.WebHandlers.HandleSearchSlides._staticInstance.set_path(value); }
+RBExtern.WebHandlers.HandleSearchSlides.get_path = function() { return RBExtern.WebHandlers.HandleSearchSlides._staticInstance.get_path(); }
+RBExtern.WebHandlers.HandleSearchSlides.set_timeout = function(value) { RBExtern.WebHandlers.HandleSearchSlides._staticInstance.set_timeout(value); }
+RBExtern.WebHandlers.HandleSearchSlides.get_timeout = function() { return RBExtern.WebHandlers.HandleSearchSlides._staticInstance.get_timeout(); }
+RBExtern.WebHandlers.HandleSearchSlides.set_defaultUserContext = function(value) { RBExtern.WebHandlers.HandleSearchSlides._staticInstance.set_defaultUserContext(value); }
+RBExtern.WebHandlers.HandleSearchSlides.get_defaultUserContext = function() { return RBExtern.WebHandlers.HandleSearchSlides._staticInstance.get_defaultUserContext(); }
+RBExtern.WebHandlers.HandleSearchSlides.set_defaultSucceededCallback = function(value) { RBExtern.WebHandlers.HandleSearchSlides._staticInstance.set_defaultSucceededCallback(value); }
+RBExtern.WebHandlers.HandleSearchSlides.get_defaultSucceededCallback = function() { return RBExtern.WebHandlers.HandleSearchSlides._staticInstance.get_defaultSucceededCallback(); }
+RBExtern.WebHandlers.HandleSearchSlides.set_defaultFailedCallback = function(value) { RBExtern.WebHandlers.HandleSearchSlides._staticInstance.set_defaultFailedCallback(value); }
+RBExtern.WebHandlers.HandleSearchSlides.get_defaultFailedCallback = function() { return RBExtern.WebHandlers.HandleSearchSlides._staticInstance.get_defaultFailedCallback(); }
+RBExtern.WebHandlers.HandleSearchSlides.set_path("/WebHandlers/HandleSearchSlides.asmx");
+RBExtern.WebHandlers.HandleSearchSlides.GetSearchResult= function(projectIDs,arrSlideValues,arrObjProperties,readyToMoveIn,onSuccess,onFailed,userContext) {RBExtern.WebHandlers.HandleSearchSlides._staticInstance.GetSearchResult(projectIDs,arrSlideValues,arrObjProperties,readyToMoveIn,onSuccess,onFailed,userContext); }
+RBExtern.WebHandlers.HandleSearchSlides.GetProjects= function(countyId,arrMunicipalityIDs,arrTypeIDs,arrTenureStatusIDs,categoryId,readyToMoveIn,onSuccess,onFailed,userContext) {RBExtern.WebHandlers.HandleSearchSlides._staticInstance.GetProjects(countyId,arrMunicipalityIDs,arrTypeIDs,arrTenureStatusIDs,categoryId,readyToMoveIn,onSuccess,onFailed,userContext); }
+RBExtern.WebHandlers.HandleSearchSlides.GetMunicipality= function(countyId,bigCityId,bigCity,onSuccess,onFailed,userContext) {RBExtern.WebHandlers.HandleSearchSlides._staticInstance.GetMunicipality(countyId,bigCityId,bigCity,onSuccess,onFailed,userContext); }
+RBExtern.WebHandlers.HandleSearchSlides.GetAllMunicipalities= function(onSuccess,onFailed,userContext) {RBExtern.WebHandlers.HandleSearchSlides._staticInstance.GetAllMunicipalities(onSuccess,onFailed,userContext); }
+RBExtern.WebHandlers.HandleSearchSlides.IsAllProjectsCached= function(onSuccess,onFailed,userContext) {RBExtern.WebHandlers.HandleSearchSlides._staticInstance.IsAllProjectsCached(onSuccess,onFailed,userContext); }

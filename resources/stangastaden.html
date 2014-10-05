@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0192)https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">
+
+
+<title>Stångåstaden</title>
+<script type="text/javascript" src="./stangastaden_files/jquery.js"></script>
+<script type="text/javascript" src="./stangastaden_files/common.js"></script>
+<script type="text/javascript" src="./stangastaden_files/jquery.f2ImagePlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="./stangastaden_files/stylesheet.php">
+
+
+</head>
+
+<body>
+<!-- start page -->
+<div id="page" class=" safari">
+
+  <!-- start content -->
+  <div id="content" class="clearfix safari">
+    
+    <div id="mainhtml">
+      <div id="maincontent">
+        <!--<table style="margin-bottom: 10px" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tbody>
+        <tr>
+            <td class="pageTitle">Sök bostad / Lediga lägenheter</td>
+        </tr>
+    </tbody>
+</table>-->
+        <div title="sok_ledigt" id="cmsmenuid">&nbsp;</div>
+<table cellspacing="0" cellpadding="0" border="0" class="mainouterhtml">
+    <tbody>
+        <tr>
+            <td valign="top" class="maincontent">
+        
+			<table cellspacing="0" cellpadding="0" width="100%" border="0">
+				<tbody>
+					<tr>
+						<td style="vertical-align:top"><!--?xml version="1.0" encoding="iso-8859-1"?-->
+<f2k><form id="_id8" name="_id8" method="post" action="./stangastaden_files/stangastaden.html" enctype="application/x-www-form-urlencoded" target="">
+		
+        <script language="javascript"><!--
+
+			var bLoggedinAsApplicant = false;
+			$(document).ready(function(){
+				
+				//check checked area options
+				$("#areaContainer input").click(function(){
+					if($(this).attr("checked")) {
+						var areaId = $(this).attr("value");
+						if(areaId != -1) {
+							$("#areaContainer input:first").removeAttr("checked");
+						}
+						else {
+							$("#areaContainer input").removeAttr("checked");
+							$("#areaContainer input:first").attr("checked", "checked");
+						}
+					}
+				});
+				
+				//check checked room options
+				$("#roomContainer input").click(function(){
+					if($(this).attr("checked")) {
+						var roomId = $(this).attr("value");
+						if(roomId != -1) {
+							$("#roomContainer input:first").removeAttr("checked");
+						}
+						else {
+							$("#roomContainer input").removeAttr("checked");
+							$("#roomContainer input:first").attr("checked", "checked");
+						}
+					}
+				});
+				
+				
+				//show/hide extra info
+				/*$("#propertyContainer input").click(function(){
+					toggleMyWishesInfo($(this), "show");
+				});
+				*/
+				$("#mywishes input").click(function(){
+					toggleMyWishesInfo($(this), "show");
+				});
+				$("#divInfoMyWishes").click(function(){
+					$("#divInfoMyWishes").fadeOut("slow");
+				});
+				/*
+				$("#propertyContainer label").mouseover(function(){
+					toggleMyWishesInfo($(this).children("input"), "show");
+				});
+				*/
+				function toggleMyWishesInfo($objCheckBox, action) {
+					if(!bLoggedinAsApplicant){
+						//if($objCheckBox.attr("value") == "undefined object.value.mywishes") {
+							switch(action) {
+								case "show":
+									$("#divInfoMyWishes").fadeIn("slow");
+									break;
+									
+								case "hide":
+									$("#divInfoMyWishes").fadeOut("slow");
+									break;
+									
+								case "toggle":
+									$("#divInfoMyWishes").toggle();
+									break;
+							}
+							$objCheckBox.removeAttr("checked");
+						//}
+					}
+				}
+				
+				
+				
+				//disable my wishes of not logged in as applicant
+				/*if(!bLoggedinAsApplicant){ 
+					$("#propertyContainer label").each(function(){
+						if($(this).children("input").attr("value") == "undefined object.value.mywishes") {
+							$(this).children("input").attr("disabled", "disabled");
+						}
+					});
+				}*/
+				
+				
+				//check room selection
+				$("#rumFom").change(function(){
+					checkRoomSelections(true, false);
+				});
+				
+				$("#rumTom").change(function(){
+					checkRoomSelections(false, true);
+				});
+
+				function checkRoomSelections(bRoomFromChanged, bRoomToChanged){
+					var fromValue = $("#rumFom").val();
+					var toValue = $("#rumTom").val();
+					
+					if(bRoomFromChanged) {
+						if(1 > fromValue) {	
+							//"from: all" is selected
+							$("#rumTom").val("-1");
+						}
+						else if(1 > toValue){
+							$("#rumTom").val($("#rumTom option:last").attr("value"));
+						}
+						else if(fromValue > toValue){
+							$("#rumTom").val(fromValue);
+						}
+					}
+					else if(bRoomToChanged) {
+						if(1 > toValue) {
+							//"to: all" is selected
+							$("#rumFom").val("-1");
+						}
+						else if(1 > fromValue){
+							$("#rumFom").val("1");
+						}
+						else if(fromValue > toValue){
+							$("#rumFom").val(toValue);
+						}
+					}
+					//alert(unescapeXmlText("Fr&#229;n kan inte vara st&#246;rre &#228;n till f&#246;r antal rum."));
+				}
+			});
+		
+//--></script>
+		<table style="width: 100%;" class="boxInfo boxGreen">
+			<tbody>
+				<tr>
+					<td class="boxTopLeft"></td>
+					<td class="boxTop"></td>
+					<td class="boxTopRight"></td>
+				</tr>
+				<tr>
+					<td class="boxLeft"></td>
+					<td class="boxMain">
+						<table id="tblObjectSearch" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+							<tbody><tr>
+								<td class="tdFilter">
+									<script language="javascript"><!--
+
+										$(document).ready(function(){
+											$("a#btnAreaInfo").attr("href","http://www.stangastaden.se/boendeinfo/varaomraden/Pages/default.aspx");
+											$("a#btnAreaInfo").attr("target","_blank");
+										});
+									
+//--></script>
+									Område (<strong><a href="http://www.stangastaden.se/boendeinfo/varaomraden/Pages/default.aspx" id="btnAreaInfo" target="_blank">Karta/info områden</a></strong>):
+								</td>
+								<td class="tdFilter">
+									Antal rum:
+								</td>
+								<td class="tdFilter tdFilterEnd">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="tdFilter">
+									<div id="areaContainer" class="scrollArea checkBoxList" style="height: 93px;"><table id="_id8:frmObjectType">		<tbody><tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" checked="checked" value="-1">&nbsp;Alla</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S1">&nbsp;Abisko/Övre Vasastaden</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S14">&nbsp;Blästad</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S40">&nbsp;Ekängen</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S2">&nbsp;Eskadern</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S3">&nbsp;Gottfridsberg</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S15">&nbsp;Haninge</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S4">&nbsp;Hejdegården</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S5">&nbsp;Innerstaden</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S16">&nbsp;Jakobsdal</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S17">&nbsp;Johannelund</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S6">&nbsp;Kungsgateområdet</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S18">&nbsp;Lambohov</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S30">&nbsp;Linghem</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S31">&nbsp;Ljungsbro</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S42">&nbsp;Magistratshagen</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S7">&nbsp;Majelden</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S32">&nbsp;Malmslätt</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S19">&nbsp;Mjärdevi</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S21">&nbsp;Ryd</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S8">&nbsp;Stolplyckan</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S41">&nbsp;Södra Ekkällan</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S9">&nbsp;T1</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S22">&nbsp;Ullevi (Skattegården)</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S20">&nbsp;Ullstämma/Harvestad</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S10">&nbsp;Valla/Fridhem</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S11">&nbsp;Vasastaden (Norr)</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S12">&nbsp;Vasastaden (Söder)</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S23">&nbsp;Vidingsjö</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S37">&nbsp;Vikingstad</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S24">&nbsp;Västra Berga</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S13">&nbsp;Åbylund</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmObjectType[]" value="S25">&nbsp;Östra Berga</label></td></tr></tbody></table>
+									</div>
+								</td>
+								<td class="tdFilter">
+									<div id="roomContainer" class="scrollArea checkBoxList" style="height: 53px;"><table id="_id8:frmNoOfRooms">		<tbody><tr><td><label><input type="checkbox" name="_id8:frmNoOfRooms[]" checked="checked" value="-1">&nbsp;Alla</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmNoOfRooms[]" checked="checked" value="A1">&nbsp;Ett rum</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmNoOfRooms[]" checked="checked" value="A2">&nbsp;Två rum</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmNoOfRooms[]" checked="checked" value="A3">&nbsp;Tre rum</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmNoOfRooms[]" checked="checked" value="A4">&nbsp;Fyra rum</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmNoOfRooms[]" checked="checked" value="A5">&nbsp;Fem rum</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmNoOfRooms[]" checked="checked" value="A6">&nbsp;Sex rum</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:frmNoOfRooms[]" checked="checked" value="A7">&nbsp;Sju rum</label></td></tr></tbody></table>
+									</div>
+									
+									<div class="clear" style="height:8px;"></div>
+									
+									Max hyra:
+									<div style="padding-top:2px;"><select name="_id8:_id23" size="1">	<option value="-1" selected="selected">Alla</option>	<option value="2000">2 000 kr</option>	<option value="3000">3 000 kr</option>	<option value="4000">4 000 kr</option>	<option value="5000">5 000 kr</option>	<option value="6000">6 000 kr</option>	<option value="7000">7 000 kr</option>	<option value="8000">8 000 kr</option>	<option value="9000">9 000 kr</option>	<option value="10000">10 000 kr</option></select>
+									</div>
+								</td>
+								<td class="tdFilter tdFilterEnd checkBoxList">
+									<div id="propertyContainer">
+										<table>
+											<tbody><tr>
+												<td><input type="checkbox" name="_id8:bdirekt[]" id="_id8:bdirekt" value="true" title="BostadDirekt"> BostadDirekt</td>
+											</tr>
+										</tbody></table><table>		<tbody><tr><td><label><input type="checkbox" name="_id8:_id36[]" value="1009" accesskey="e">&nbsp;55+ boende</label></td></tr>		<tr><td><label><input type="checkbox" name="_id8:_id36[]" value="5032" accesskey="e">&nbsp;Nyproduktion</label></td></tr></tbody></table>
+										
+										
+										<table id="mywishes">
+											<tbody><tr>
+												<td><input type="checkbox" name="_id8:sokbar[]" id="_id8:sokbar" value="true" title="Mina önskemål"> Mina önskemål</td>
+											</tr>
+										</tbody></table>
+										
+										
+										
+
+										<div id="divInfoMyWishes" class="altInfoText" style="margin-top:-16px; width: 130px;">För att se dina önskemål måste du vara inloggad och ha din prenumeration aktiverad. <strong><a href="https://fast2.stangastaden.se/index.php?page=login" target="">Logga in&nbsp;»</a></strong></div>
+									</div><script type="text/javascript"><!--
+
+
+	function oamSetHiddenInput(formname, name, value)
+	{
+		var form = document.forms[formname];
+		if(typeof form.elements[name]=='undefined')
+		{
+			var newInput = document.createElement('input');
+			newInput.setAttribute('type','hidden');
+			newInput.setAttribute('id',name);
+			newInput.setAttribute('name',name);
+			newInput.setAttribute('value',value);
+			form.appendChild(newInput);
+		}
+		else
+		{
+			form.elements[name].value=value;
+		}
+		
+	}
+	
+	
+	function oamClearHiddenInput(formname, name, value)
+	{
+		var form = document.forms[formname];
+		if(typeof form.elements[name]!='undefined')
+		{
+			form.elements[name].value=null;
+		}
+		
+	}
+	
+	function oamSubmitForm(formName, linkId, target, params)
+	{
+		
+		var clearFn = 'clearFormHiddenParams_'+formName.replace(/-/g, '\$:').replace(/:/g,'_');
+		if(typeof eval('window.'+clearFn)!='undefined')
+		{
+			eval('window.'+clearFn+'(formName)');
+		}
+		
+		var oldTarget = '';
+		if((typeof target!='undefined') && target != null)
+		{
+			oldTarget=document.forms[formName].target;
+			document.forms[formName].target=target;
+		}
+		if((typeof params!='undefined') && params != null)
+		{
+			for(var i=0; i<params.length; i++)
+			{
+				oamSetHiddenInput(formName,params[i][0], params[i][1]);
+			}
+			
+		}
+		
+		oamSetHiddenInput(formName,formName +':'+'_idcl',linkId);
+		
+		if(document.forms[formName].onsubmit)
+		{
+			var result=document.forms[formName].onsubmit();
+			if((typeof result=='undefined')||result)
+			{
+				document.forms[formName].submit();
+			}
+			
+		}
+		else 
+		{
+			document.forms[formName].submit();
+		}
+		if(oldTarget==null) oldTarget='';
+		document.forms[formName].target=oldTarget;
+		if((typeof params!='undefined') && params != null)
+		{
+			for(var i=0; i<params.length; i++)
+			{
+				oamClearHiddenInput(formName,params[i][0], params[i][1]);
+			}
+			
+		}
+		
+		oamClearHiddenInput(formName,formName +':'+'_idcl',linkId);
+for (var i=0; i<document.forms[formName].elements.length; i++)
+			alert(document.forms[formName].elements[i].name + " set to " + document.forms[formName].elements[i].value + "!");
+		alert(form.elements.length);
+		return false;
+	}
+	
+
+//--></script><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id8&#39;,&#39;_id8:_id41&#39;);" id="_id8:_id41" title="" style="float:right" class="btn_default">
+                                        <span>Sök</span></a>
+								</td>
+							</tr>
+						</tbody></table>
+					
+					</td>
+					<td class="boxRight"></td>
+				</tr>
+				<tr>
+					<td class="boxBottomLeft"></td>
+					<td class="boxBottom"></td>
+					<td class="boxBottomRight"></td>
+				</tr>
+			</tbody>
+		</table><input type="hidden" name="_id8_SUBMIT" value="1"><input type="hidden" name="_id8:_idcl" value=""><input type="hidden" name="_id8:_link_hidden_" value=""><script type="text/javascript"><!--
+
+	function clear__5Fid8()
+	{
+		clearFormHiddenParams__id8('_id8');
+	}
+	
+	function clearFormHiddenParams__id8(currFormName)
+	{
+		var f = document.forms['_id8'];
+		f.elements['_id8:_idcl'].value='';
+		f.elements['_id8:_link_hidden_'].value='';
+		f.target='';
+	}
+	
+	clearFormHiddenParams__id8();
+//--></script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="rO0ABXVyABNbTGphdmEubGFuZy5PYmplY3Q7kM5YnxBzKWwCAAB4cAAAAAN0AAE3cHQALi9wYWdlcy9tYXJrbmFkL19wdWJsaWMvb2JqZWN0X3NlYXJjaGxpc3QueGh0bWw="></form>
+</f2k></td>
+						<td style="vertical-align:top; padding-left: 30px;">
+							<img border="0" src="./stangastaden_files/e_title_symbolforklaring.gif">
+							<table class="icoList">
+								<tbody>
+									<tr>
+										<td class="ico"><img border="0" src="./stangastaden_files/ico_fastaccess.gif"></td>
+										<td class="txt">=</td>
+										<td class="txt">BostadDirekt</td>
+									</tr>
+									<tr>
+										<td class="ico"><img border="0" src="./stangastaden_files/ico_senior.gif"></td>
+										<td class="txt">=</td>
+										<td class="txt">55+ boende</td>
+									</tr>
+									<tr>
+										<td class="ico"><img border="0" src="./stangastaden_files/ico_newproduction.gif"></td>
+										<td class="txt">=</td>
+										<td class="txt">Nyproduktion</td>
+									</tr>
+									<tr>
+										<td class="ico"><img border="0" src="./stangastaden_files/ico_map.gif"></td>
+										<td class="txt">=</td>
+										<td class="txt">Visa på karta <nobr>(extern länk)</nobr></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<br>
+							<div class="divDlgHeader">Sökresultat</div><!--?xml version="1.0" encoding="iso-8859-1"?-->
+<f2k>
+
+    <div id="divObjectList"><form id="_id49" name="_id49" method="post" action="./stangastaden_files/stangastaden.html" enctype="application/x-www-form-urlencoded" target="">
+<table id="_id49:dtLediga" border="0" cellpadding="0" cellspacing="0" class="tblList">
+<thead>
+<tr><th class="tdListHeader">&nbsp;</th><th class="tdListHeader"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:_id65&#39;);" id="_id49:dtLediga:_id65">
+                            <div id="divMsgArea" class="altText" style="margin-top:20px; margin-left:0px;"></div>Område&nbsp;</a></th><th class="tdListHeader"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:_id71&#39;);" id="_id49:dtLediga:_id71">
+                            <div id="divMsgAddress" class="altText" style="margin-top:20px; margin-left:0px;"></div>Adress&nbsp;</a></th><th class="tdListHeader"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:_id77&#39;);" id="_id49:dtLediga:_id77" onmouseover="showAltTextF2K(&#39;divMsgObjType&#39;, &#39;&lt;font color=black &gt;Antal rum i lägenheten.&lt;/font&gt;&#39;, false)" onmouseout="hideAltTextF2K(&#39;divMsgObjType&#39;)">
+                            <div id="divMsgObjType" class="altText" style="margin-top:20px; margin-left:0px;"></div>Antal rum&nbsp;↑</a></th><th class="tdListHeader"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:_id85&#39;);" id="_id49:dtLediga:_id85" onmouseover="showAltTextF2K(&#39;divMsgSize&#39;, &#39;&lt;font color=black &gt;Lägenhetens yta.&lt;/font&gt;&#39;, false)" onmouseout="hideAltTextF2K(&#39;divMsgSize&#39;)">
+                            <div id="divMsgSize" class="altText" style="margin-top:20px; margin-left:0px;"></div>Yta&nbsp;</a></th><th class="tdListHeader"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:_id91&#39;);" id="_id49:dtLediga:_id91" onmouseover="showAltTextF2K(&#39;divMsgRent&#39;, &#39;&lt;font color=black &gt;Månadshyra.&lt;/font&gt;&#39;, false)" onmouseout="hideAltTextF2K(&#39;divMsgRent&#39;)">
+                            <div id="divMsgRent" class="altText" style="margin-top:20px; margin-left:-80px;"></div>Hyra&nbsp;</a></th><th class="tdListHeader"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:_id97&#39;);" id="_id49:dtLediga:_id97" onmouseover="showAltTextF2K(&#39;divMsgMoveIn&#39;, &#39;&lt;font color=black &gt;Datumet anger när du får tillträde till lägenheten.&lt;/font&gt;&#39;, false)" onmouseout="hideAltTextF2K(&#39;divMsgMoveIn&#39;)">
+                            <div id="divMsgMoveIn" class="altText" style="margin-top:20px; margin-left:-120px;"></div>Inflyttning&nbsp;</a></th><th class="tdListHeader"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:_id103&#39;);" id="_id49:dtLediga:_id103" onmouseover="showAltTextF2K(&#39;divMsgReleased&#39;, &#39;&lt;font color=black &gt;Datum då lägenheten blev tillgänglig att söka&lt;/font&gt;&#39;, false)" onmouseout="hideAltTextF2K(&#39;divMsgReleased&#39;)">
+                            <div id="divMsgReleased" class="altText" style="margin-top:20px; margin-left:-120px;"></div>Inkommen&nbsp;</a></th><th class="tdListHeader">&nbsp;</th></tr></thead>
+<tbody id="_id49:dtLediga:tbody_element">
+<tr id="60808"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=M%C5RDTORPSGATAN+31%2C+58432&#39;);"></a>
+					</div></td><td class="tdListRow">Ryd</td><td class="tdListRow">MÅRDTORPSGATAN 31</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">1 RUM KOKVRÅ
+					</div></td><td class="tdListRow">30</td><td class="tdListRow">2491 kr</td><td class="tdListRow">2014-12-01</td><td class="tdListRow">2014-08-26</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:0:detalj&#39;,null,[[&#39;refid&#39;,&#39;60808&#39;]]);" id="_id49:dtLediga:0:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr>
+<tr id="60813"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=SKATTEG%C5RDEN+6+B%2C+58648&#39;);"></a>
+					</div></td><td class="tdListRow">Ullevi (Skattegården)</td><td class="tdListRow">SKATTEGÅRDEN 6 B</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">1 RUM KÖK
+					</div></td><td class="tdListRow">43</td><td class="tdListRow">3801 kr</td><td class="tdListRow">2014-11-01</td><td class="tdListRow">2014-08-26</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:1:detalj&#39;,null,[[&#39;refid&#39;,&#39;60813&#39;]]);" id="_id49:dtLediga:1:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr>
+<tr id="60822"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=MAJELDSV%C4GEN+8+B%2C+58732&#39;);"></a>
+					</div></td><td class="tdListRow">Majelden</td><td class="tdListRow">MAJELDSVÄGEN 8 B</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">1 RUM KÖK
+					</div></td><td class="tdListRow">39</td><td class="tdListRow">3934 kr</td><td class="tdListRow">2014-11-01</td><td class="tdListRow">2014-08-27</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:2:detalj&#39;,null,[[&#39;refid&#39;,&#39;60822&#39;]]);" id="_id49:dtLediga:2:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr>
+<tr id="60846"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=DROTTNINGGATAN+44%2C+58227&#39;);"></a>
+					</div></td><td class="tdListRow">Innerstaden</td><td class="tdListRow">DROTTNINGGATAN 44</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">1 RUM KÖK
+					</div></td><td class="tdListRow">39</td><td class="tdListRow">4567 kr</td><td class="tdListRow">2014-12-01</td><td class="tdListRow">2014-08-28</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:3:detalj&#39;,null,[[&#39;refid&#39;,&#39;60846&#39;]]);" id="_id49:dtLediga:3:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr>
+<tr id="60876"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=M%C5RDTORPSGATAN+5%2C+58432&#39;);"></a>
+					</div></td><td class="tdListRow">Ryd</td><td class="tdListRow">MÅRDTORPSGATAN 5</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">2 RUM KOKVRÅ
+					</div></td><td class="tdListRow">50</td><td class="tdListRow">3994 kr</td><td class="tdListRow">2014-11-01</td><td class="tdListRow">2014-08-29</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:4:detalj&#39;,null,[[&#39;refid&#39;,&#39;60876&#39;]]);" id="_id49:dtLediga:4:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr>
+<tr id="60823"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=HJ%C4LMGATAN+14+A%2C+58217&#39;);"></a>
+					</div></td><td class="tdListRow">Gottfridsberg</td><td class="tdListRow">HJÄLMGATAN 14 A</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">2 RUM KÖK
+					</div></td><td class="tdListRow">46</td><td class="tdListRow">4026 kr</td><td class="tdListRow">2014-12-01</td><td class="tdListRow">2014-08-27</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:5:detalj&#39;,null,[[&#39;refid&#39;,&#39;60823&#39;]]);" id="_id49:dtLediga:5:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr>
+<tr id="60879"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=M%C5RDTORPSGATAN+29%2C+58432&#39;);"></a>
+					</div></td><td class="tdListRow">Ryd</td><td class="tdListRow">MÅRDTORPSGATAN 29</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">2 RUM KÖK
+					</div></td><td class="tdListRow">55</td><td class="tdListRow">4323 kr</td><td class="tdListRow">2014-12-01</td><td class="tdListRow">2014-08-29</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:6:detalj&#39;,null,[[&#39;refid&#39;,&#39;60879&#39;]]);" id="_id49:dtLediga:6:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr>
+<tr id="60804"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=F%C5L%C5SAV%C4GEN+1+B%2C+59049&#39;);"></a>
+					</div></td><td class="tdListRow">Vikingstad</td><td class="tdListRow">FÅLÅSAVÄGEN 1 B</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">2 RUM KÖK
+					</div></td><td class="tdListRow">64</td><td class="tdListRow">4862 kr</td><td class="tdListRow">2014-12-01</td><td class="tdListRow">2014-08-25</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:7:detalj&#39;,null,[[&#39;refid&#39;,&#39;60804&#39;]]);" id="_id49:dtLediga:7:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr>
+<tr id="60831"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=LUFTV%C4RNSGATAN+6%2C+58734&#39;);"></a>
+					</div></td><td class="tdListRow">Västra Berga</td><td class="tdListRow">LUFTVÄRNSGATAN 6</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">2 RUM KÖK
+					</div></td><td class="tdListRow">63</td><td class="tdListRow">4874 kr</td><td class="tdListRow">2014-11-01</td><td class="tdListRow">2014-08-28</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:8:detalj&#39;,null,[[&#39;refid&#39;,&#39;60831&#39;]]);" id="_id49:dtLediga:8:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr>
+<tr id="60814"><td class="tdListRow">
+					
+					<div style="text-align:right"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#"><img src="./stangastaden_files/ico_map.gif" border="0" class="tdListIcon" alt="Visa på karta" onclick="window.open(&#39;http://www.hitta.se/LargeMap.aspx?vad=&amp;var=MAJELDSV%C4GEN+1+C%2C+58732&#39;);"></a>
+					</div></td><td class="tdListRow">Majelden</td><td class="tdListRow">MAJELDSVÄGEN 1 C</td><td class="tdListRow">
+					<div style="text-transform: lowercase;">2 RUM KÖK
+					</div></td><td class="tdListRow">55</td><td class="tdListRow">5249 kr</td><td class="tdListRow">2014-12-01</td><td class="tdListRow">2014-08-27</td><td class="tdListRow"><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:dtLediga:9:detalj&#39;,null,[[&#39;refid&#39;,&#39;60814&#39;]]);" id="_id49:dtLediga:9:detalj" style="float:right; padding-right: 10px;" class="lnk">
+                        Detaljer&nbsp;»</a></td></tr></tbody></table>
+<table class="tblListFunctions"><tbody><tr><td class="tdListFunctions">
+					<div class="listPagerInfo">50 lediga objekt, Sida 1 av 5
+					</div><span class="standard"></span><table class="tblListScroller"><tbody><tr><td><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:scroll_1previous&#39;,null,[[&#39;_id49:scroll_1&#39;,&#39;previous&#39;]]);" id="_id49:scroll_1previous">
+						<span class="controlinactive">
+                        « Tillbaka&nbsp;
+						</span></a></td><td><table class="tblListPager"><tbody><tr><td class="active" style=""><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:scroll_1idx1&#39;,null,[[&#39;_id49:scroll_1&#39;,&#39;idx1&#39;]]);" id="_id49:scroll_1idx1">1</a></td><td><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:scroll_1idx2&#39;,null,[[&#39;_id49:scroll_1&#39;,&#39;idx2&#39;]]);" id="_id49:scroll_1idx2">2</a></td><td><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:scroll_1idx3&#39;,null,[[&#39;_id49:scroll_1&#39;,&#39;idx3&#39;]]);" id="_id49:scroll_1idx3">3</a></td><td><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:scroll_1idx4&#39;,null,[[&#39;_id49:scroll_1&#39;,&#39;idx4&#39;]]);" id="_id49:scroll_1idx4">4</a></td><td><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:scroll_1idx5&#39;,null,[[&#39;_id49:scroll_1&#39;,&#39;idx5&#39;]]);" id="_id49:scroll_1idx5">5</a></td></tr></tbody></table></td><td><a href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="return oamSubmitForm(&#39;_id49&#39;,&#39;_id49:scroll_1next&#39;,null,[[&#39;_id49:scroll_1&#39;,&#39;next&#39;]]);" id="_id49:scroll_1next">
+						<span class="">
+                        &nbsp;Nästa sida »
+						</span></a></td></tr></tbody></table></td></tr>
+</tbody></table><input type="hidden" name="_id49_SUBMIT" value="1"><input type="hidden" name="_id49:_link_hidden_" value=""><input type="hidden" name="_id49:_idcl" value=""><input type="hidden" name="refid" value=""><input type="hidden" name="_id49:scroll_1" value=""><script type="text/javascript"><!--
+
+	function clear__5Fid49()
+	{
+		clearFormHiddenParams__id49('_id49');
+	}
+	
+	function clearFormHiddenParams__id49(currFormName)
+	{
+		var f = document.forms['_id49'];
+		f.elements['_id49:_link_hidden_'].value='';
+		f.elements['_id49:_idcl'].value='';
+		f.elements['refid'].value='';
+		f.elements['_id49:scroll_1'].value='';
+		f.target='';
+	}
+	
+	clearFormHiddenParams__id49();
+//--></script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="rO0ABXVyABNbTGphdmEubGFuZy5PYmplY3Q7kM5YnxBzKWwCAAB4cAAAAAN0AAE3cHQALi9wYWdlcy9tYXJrbmFkL19wdWJsaWMvb2JqZWN0X3NlYXJjaGxpc3QueGh0bWw="></form>
+				<map name="appstore">
+					<area shape="rect" coords="6,76,64,117" href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="window.open(&#39;http://itunes.apple.com/se/app/stangastaden/id483342578&#39;)" title="iPhone">
+					<area shape="rect" coords="64,76,122,117" href="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9zZWFyY2hsaXN0LmpzZg%3D%3D#" onclick="window.parent.location.href=&#39;https://market.android.com/details?id=com.fast2.stangastaden&#39;" title="Android">
+				</map>
+				<img src="./stangastaden_files/app_banner_sok_bostad.jpg" usemap="#appstore">
+
+    </div>
+</f2k> 
+						</td>
+					</tr>
+				</tbody>
+			</table>
+            
+    <!-- MYFACES JAVASCRIPT -->
+
+</td>
+        </tr>
+    </tbody>
+</table>
+      </div>
+    </div>
+
+  </div>
+  <!-- end content -->
+
+</div>
+<!-- end page -->
+
+
+
+<!-- 0.161243 / 28 -->
+</body></html>

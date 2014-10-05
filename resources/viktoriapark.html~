@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://victoriaparkv2.capitex.se/pages/lagenheter.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style><link type="text/css" rel="stylesheet" href="./viktoriapark_files/css"><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}</style><title>
+	Lediga lägenheter
+</title><link type="text/css" rel="stylesheet" href="./viktoriapark_files/default.css"><link type="text/css" rel="stylesheet" href="./viktoriapark_files/font-awesome.css"><link type="text/css" rel="stylesheet" href="./viktoriapark_files/font-awesome-ie7.css">
+
+    <script src="./viktoriapark_files/jquery.js" type="text/javascript"></script>
+    <script src="./viktoriapark_files/js" type="text/javascript"></script><script src="./viktoriapark_files/main.js" type="text/javascript"></script>
+    <script src="./viktoriapark_files/gmap3.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var bounds = new google.maps.LatLngBounds();
+        var defaultlat = 59.335291;
+        var defaultlng = 18.053455;
+
+        function initMap() {
+            $('#map').gmap3({
+                map: {
+                    options: {
+                        mapTypeControl: true,
+                        mapTypeControlOptions: {
+                            position: google.maps.ControlPosition.TOP_LEFT
+                        },
+                        navigationControl: true,
+                        scrollwheel: true,
+                        streetViewControl: true
+                    }
+                }
+            });
+            bounds = new google.maps.LatLngBounds();
+            $('#map').gmap3('clear', 'markers');
+        }
+
+        function AddMarker(lat, lng, indata) {
+            var point = new google.maps.LatLng(lat, lng);
+            bounds.extend(point);
+
+            $('#map').gmap3({
+                action: 'addMarker',
+                latLng: [lat, lng],
+                options: {
+                    draggable: false,
+                    animation: google.maps.Animation.DROP
+                },
+                marker: {
+                    events: {
+                        click: function () {
+                            window.open("/pages/Beskrivning.aspx?GUID=" + indata + "&TYP=CMBoLgh");
+                        }
+                    }
+                }
+            });
+        }
+
+        function SetBounds() {
+
+            var map = $('#map').gmap3('get');
+            var EmptyBounds = bounds.isEmpty();
+            if (EmptyBounds == false) {
+                map.setCenter(bounds.getCenter());
+                map.fitBounds(bounds);
+                if (map.getZoom() > 13 || map.getZoom() < 5)
+                    map.setZoom(13);
+            }
+            else {
+                map.setCenter(new google.maps.LatLng(defaultlat, defaultlng), 5);
+            }
+
+        }
+
+    </script>    
+    <script type="text/javascript">
+        var isDragging = false;
+        function Drag(sender, args) {
+            $get("lblRumMin").innerHTML = $get("rangeStart").value;
+            $get("lblRumMax").innerHTML = $get("rangeEnd").value;
+            $get("lblHyraMin").innerHTML = $get("rangeStartHyra").value;
+            $get("lblHyraMax").innerHTML = $get("rangeEndHyra").value;
+        }        
+</script>
+<link href="./viktoriapark_files/WebResource.axd" type="text/css" rel="stylesheet"><script type="text/javascript" charset="UTF-8" src="./viktoriapark_files/{common,map,util,marker}.js"></script><script type="text/javascript" charset="UTF-8" src="./viktoriapark_files/{onion}.js"></script><script type="text/javascript" charset="UTF-8" src="./viktoriapark_files/{controls,stats}.js"></script><script type="text/javascript" charset="UTF-8" src="./viktoriapark_files/ViewportInfoService.GetViewportInfo"></script><script type="text/javascript" charset="UTF-8" src="./viktoriapark_files/vt"></script><script type="text/javascript" charset="UTF-8" src="./viktoriapark_files/AuthenticationService.Authenticate"></script><script type="text/javascript" charset="UTF-8" src="./viktoriapark_files/ViewportInfoService(1).GetViewportInfo"></script><script type="text/javascript" charset="UTF-8" src="./viktoriapark_files/vt(1)"></script><script type="text/javascript" charset="UTF-8" src="./viktoriapark_files/QuotaService.RecordEvent"></script></head>
+<body>
+    <form method="post" action="./viktoriapark_files/viktoriapark.html" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzY0NTYzMzgxD2QWAgIDD2QWBAIDD2QWAmYPZBYMAgEPEA8WAh4LXyFEYXRhQm91bmRnZBAVCgpWw6RsaiBzdGFkBEFsbGEKTGlua8O2cGluZwZNYWxtw7YITWFya2FyeWQGU2t1cnVwB1Nww6VuZ2EJU3RvY2tob2xtD1N0csO2bXNuw6RzYnJ1awXDhWh1cxUKClbDpGxqIHN0YWQEQWxsYQpMaW5rw7ZwaW5nBk1hbG3DtghNYXJrYXJ5ZAZTa3VydXAHU3DDpW5nYQlTdG9ja2hvbG0PU3Ryw7Ztc27DpHNicnVrBcOFaHVzFCsDCmdnZ2dnZ2dnZ2cWAWZkAgMPEA8WAh8AZ2QQFQsNVsOkbGogb21yw6VkZQRBbGxhCEFiYmVrw6VzCE1hcmthcnlkB055Z8OlcmQKUm9zZW5nw6VyZANSeWQPU3Ryw7Ztc27DpHNicnVrBlRlbnN0YQhUaW1zZm9ycwXDhWh1cxULDVbDpGxqIG9tcsOlZGUEQWxsYQhBYmJla8OlcwhNYXJrYXJ5ZAdOeWfDpXJkClJvc2VuZ8OlcmQDUnlkD1N0csO2bXNuw6RzYnJ1awZUZW5zdGEIVGltc2ZvcnMFw4VodXMUKwMLZ2dnZ2dnZ2dnZ2dkZAIFDw8WAh4EVGV4dAUBMWRkAgkPDxYCHwEFATdkZAITDw8WAh8BBQQxMDAwZGQCFw8PFgIfAQUFMTUwMDBkZAIFD2QWAmYPZBYCAgEPFgIeC18hSXRlbUNvdW50AhAWIGYPZBYCZg8VCTkvcGFnZXMvQmVza3Jpdm5pbmcuYXNweD9HVUlEPTQ5UFJSREVCOVVUOUxPM0omVFlQPUNNQm9MZ2jJAWh0dHA6Ly92aWN0b3JpYXBhcmt2Mi5jYXBpdGV4LnNlL0NhcGl0ZXhSZXNvdXJjZXMvQ2FwaXRleC5EYXRhbGFnZXIuREJGaWxlL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS5kYmZpbGUuYXNweD9nPTQ5UFJSRTAxOVVUOUxPUEcmdD1DQmlsZCZkYz0yMDE0LTA3LTA3IDE1OjI3OjMyJnc9MjEwJmg9MTQwJlNjYWxlQW5kQ2xpcE1vZGU9Rml0QW5kQ2xpcBROw6RtbmRlbWFuc2fDpXJkZW4gNgpMaW5rw7ZwaW5nB055Z8OlcmQBMwY4NiBrdm0ONsKgMDA2IGtyL23DpW4AZAIBD2QWAmYPFQk5L3BhZ2VzL0Jlc2tyaXZuaW5nLmFzcHg/R1VJRD00QTFBU0JOR1NWSU5URklHJlRZUD1DTUJvTGdoyQFodHRwOi8vdmljdG9yaWFwYXJrdjIuY2FwaXRleC5zZS9DYXBpdGV4UmVzb3VyY2VzL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUuZGJmaWxlLmFzcHg/Zz00QTFBU0Q0TEFWSU5UR0RVJnQ9Q0JpbGQmZGM9MjAxNC0wOC0wNSAxMTo0NzoxNyZ3PTIxMCZoPTE0MCZTY2FsZUFuZENsaXBNb2RlPUZpdEFuZENsaXAPUnlkcyBBbGzDqSAxMiBBCkxpbmvDtnBpbmcDUnlkATMGODAga3ZtDjnCoDExMSBrci9tw6VuAGQCAg9kFgJmDxUJOS9wYWdlcy9CZXNrcml2bmluZy5hc3B4P0dVSUQ9NEEzNDNTQ01SOFVFNEtLOSZUWVA9Q01Cb0xnaMkBaHR0cDovL3ZpY3RvcmlhcGFya3YyLmNhcGl0ZXguc2UvQ2FwaXRleFJlc291cmNlcy9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUvQ2FwaXRleC5EYXRhbGFnZXIuREJGaWxlLmRiZmlsZS5hc3B4P2c9NEEzNDNTTUNKOFVFNExLNSZ0PUNCaWxkJmRjPTIwMTQtMDgtMTIgMTY6NDg6MjMmdz0yMTAmaD0xNDAmU2NhbGVBbmRDbGlwTW9kZT1GaXRBbmRDbGlwDlJhbWVscyB2w6RnIDY3Bk1hbG3DtgpSb3NlbmfDpXJkATMIODYsMiBrdm0ON8KgMzA4IGtyL23DpW4AZAIDD2QWAmYPFQk5L3BhZ2VzL0Jlc2tyaXZuaW5nLmFzcHg/R1VJRD00QTNJQ1I5SlY4VUU2NlFQJlRZUD1DTUJvTGdoyQFodHRwOi8vdmljdG9yaWFwYXJrdjIuY2FwaXRleC5zZS9DYXBpdGV4UmVzb3VyY2VzL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUuZGJmaWxlLmFzcHg/Zz00QTNJQ1JOTUg4VUU2N0pKJnQ9Q0JpbGQmZGM9MjAxNC0wOC0xNCAxMDowMTo0MSZ3PTIxMCZoPTE0MCZTY2FsZUFuZENsaXBNb2RlPUZpdEFuZENsaXAOUmFtZWxzIHbDpGcgNzMGTWFsbcO2ClJvc2VuZ8OlcmQBMwY5MCBrdm0ON8KgMzk5IGtyL23DpW4AZAIED2QWAmYPFQk5L3BhZ2VzL0Jlc2tyaXZuaW5nLmFzcHg/R1VJRD00OU9LRTlKVEk2NkhWMjBLJlRZUD1DTUJvTGdoyQFodHRwOi8vdmljdG9yaWFwYXJrdjIuY2FwaXRleC5zZS9DYXBpdGV4UmVzb3VyY2VzL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUuZGJmaWxlLmFzcHg/Zz00OU9LR05GQ1VSU0U3UFJMJnQ9Q0JpbGQmZGM9MjAxNC0wNy0wMiAxODowNjowMSZ3PTIxMCZoPTE0MCZTY2FsZUFuZENsaXBNb2RlPUZpdEFuZENsaXAOUmFtZWxzIHbDpGcgOTkGTWFsbcO2ClJvc2VuZ8OlcmQBMwg4OSwzIGt2bQ43wqAzMzQga3IvbcOlbhRUcmV2bGlnIHRyZWEgdXRoeXJlc2QCBQ9kFgJmDxUJOS9wYWdlcy9CZXNrcml2bmluZy5hc3B4P0dVSUQ9NDVRQkFIQVM0QzQ3VEVCQyZUWVA9Q01Cb0xnaMkBaHR0cDovL3ZpY3RvcmlhcGFya3YyLmNhcGl0ZXguc2UvQ2FwaXRleFJlc291cmNlcy9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUvQ2FwaXRleC5EYXRhbGFnZXIuREJGaWxlLmRiZmlsZS5hc3B4P2c9NDkzUkowMjVGVEZCTEJERyZ0PUNCaWxkJmRjPTIwMTQtMDQtMTUgMTU6NDc6MDMmdz0yMTAmaD0xNDAmU2NhbGVBbmRDbGlwTW9kZT1GaXRBbmRDbGlwEEthcGxhbnNnYXRhbiAzIEYITWFya2FyeWQITWFya2FyeWQBMQY0MyBrdm0OMsKgODAwIGtyL23DpW5MU3R1ZGVudGzDpGdlbmhldCBmw7ZyIGRpZyBzb20gc2thIGLDtnJqYSBzdHVkZXJhIHDDpSBNYXJrYXJ5ZHMgRm9sa2jDtmdza29sYWQCBg9kFgJmDxUJOS9wYWdlcy9CZXNrcml2bmluZy5hc3B4P0dVSUQ9NDk1UkRIVEhKR1BBUjc1UyZUWVA9Q01Cb0xnaMkBaHR0cDovL3ZpY3RvcmlhcGFya3YyLmNhcGl0ZXguc2UvQ2FwaXRleFJlc291cmNlcy9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUvQ2FwaXRleC5EYXRhbGFnZXIuREJGaWxlLmRiZmlsZS5hc3B4P2c9NDk1UkRJNTNUR1BBUjgwQSZ0PUNCaWxkJmRjPTIwMTQtMDQtMjMgMTQ6MDY6Mjcmdz0yMTAmaD0xNDAmU2NhbGVBbmRDbGlwTW9kZT1GaXRBbmRDbGlwGVNhbmt0IFNpZ2ZyaWRzdsOkZ2VuIDI2IEEITWFya2FyeWQPU3Ryw7Ztc27DpHNicnVrATMGNzMga3ZtDjXCoDMzNCBrci9tw6VuMk55cmVub3ZlcmFkIHRyZXJ1bW1hcmUgaSBuYXR1cnNrw7ZudCB2aWxsYW9tcsOlZGUhZAIHD2QWAmYPFQk5L3BhZ2VzL0Jlc2tyaXZuaW5nLmFzcHg/R1VJRD00OTVRVThHTTFHUEFROVVHJlRZUD1DTUJvTGdoyQFodHRwOi8vdmljdG9yaWFwYXJrdjIuY2FwaXRleC5zZS9DYXBpdGV4UmVzb3VyY2VzL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUuZGJmaWxlLmFzcHg/Zz00OTVRVThPTERHUEFRQVFKJnQ9Q0JpbGQmZGM9MjAxNC0wNC0yMyAxMTo1MDoxMiZ3PTIxMCZoPTE0MCZTY2FsZUFuZENsaXBNb2RlPUZpdEFuZENsaXAQVHbDpWFucyBWw6RnIDYgQwhNYXJrYXJ5ZAhUaW1zZm9ycwEzBjkxIGt2bQ41wqA5MDIga3IvbcOlbjdUcmVydW1tYXJlIGkgbmF0dXJza8O2bnQgb2NoIGJhcm52w6RubGlndCByYWRodXNvbXLDpWRlZAIID2QWAmYPFQk5L3BhZ2VzL0Jlc2tyaXZuaW5nLmFzcHg/R1VJRD00OUJJQjJGMENFVEFRMDhHJlRZUD1DTUJvTGdoAA9TZWdlbHbDpGdlbiA4IEMGU2t1cnVwCEFiYmVrw6VzATQGOTAga3ZtDjbCoDIxMiBrci9tw6VuAGQCCQ9kFgJmDxUJOS9wYWdlcy9CZXNrcml2bmluZy5hc3B4P0dVSUQ9NDlCSURTTE9FRVRBUUNPTyZUWVA9Q01Cb0xnaMkBaHR0cDovL3ZpY3RvcmlhcGFya3YyLmNhcGl0ZXguc2UvQ2FwaXRleFJlc291cmNlcy9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUvQ2FwaXRleC5EYXRhbGFnZXIuREJGaWxlLmRiZmlsZS5hc3B4P2c9NEE4SzVCOEVQVDdKTzFNUiZ0PUNCaWxkJmRjPTIwMTQtMDktMDIgMTY6NDI6NTImdz0yMTAmaD0xNDAmU2NhbGVBbmRDbGlwTW9kZT1GaXRBbmRDbGlwDlJpc2luZ2VwbGFuIDIwB1Nww6VuZ2EGVGVuc3RhATMGODYga3ZtDjjCoDQ5MSBrci9tw6VuAGQCCg9kFgJmDxUJOS9wYWdlcy9CZXNrcml2bmluZy5hc3B4P0dVSUQ9NDlCSURTRDlRRVRBUUNKMyZUWVA9Q01Cb0xnaMkBaHR0cDovL3ZpY3RvcmlhcGFya3YyLmNhcGl0ZXguc2UvQ2FwaXRleFJlc291cmNlcy9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUvQ2FwaXRleC5EYXRhbGFnZXIuREJGaWxlLmRiZmlsZS5hc3B4P2c9NDlNQzZLSVQyT0tEMjdOSSZ0PUNCaWxkJmRjPTIwMTQtMDYtMjUgMTY6NTM6MDkmdz0yMTAmaD0xNDAmU2NhbGVBbmRDbGlwTW9kZT1GaXRBbmRDbGlwDVJpc2luZ2VwbGFuIDUJU3RvY2tob2xtBlRlbnN0YQEyBjY2IGt2bQ41wqA1OTQga3IvbcOlbgBkAgsPZBYCZg8VCTkvcGFnZXMvQmVza3Jpdm5pbmcuYXNweD9HVUlEPTQ2SFFOM0ZQMDYxQ0tRVEYmVFlQPUNNQm9MZ2jJAWh0dHA6Ly92aWN0b3JpYXBhcmt2Mi5jYXBpdGV4LnNlL0NhcGl0ZXhSZXNvdXJjZXMvQ2FwaXRleC5EYXRhbGFnZXIuREJGaWxlL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS5kYmZpbGUuYXNweD9nPTQ2SFFQRThIREdDSUVURjAmdD1DQmlsZCZkYz0yMDEzLTEwLTA3IDExOjExOjM5Jnc9MjEwJmg9MTQwJlNjYWxlQW5kQ2xpcE1vZGU9Rml0QW5kQ2xpcBNMYWdhc3RpZ3NnYXRhbiAzNCBCD1N0csO2bXNuw6RzYnJ1aw9TdHLDtm1zbsOkc2JydWsBMgY1NCBrdm0ONMKgMDE4IGtyL23DpW48VHJldmxpZyB0dsOlcnVtbWFyZSBtZWQgYmFsa29uZyBvY2ggdXRzaWt0IMO2dmVyIEhhbW1hcnNqw7ZuZAIMD2QWAmYPFQk5L3BhZ2VzL0Jlc2tyaXZuaW5nLmFzcHg/R1VJRD00OEpJQ09HUVJOS0NINVZNJlRZUD1DTUJvTGdoyQFodHRwOi8vdmljdG9yaWFwYXJrdjIuY2FwaXRleC5zZS9DYXBpdGV4UmVzb3VyY2VzL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUuZGJmaWxlLmFzcHg/Zz00OEpJQ09OTjdOS0NINk5PJnQ9Q0JpbGQmZGM9MjAxNC0wMi0xNCAwOTozODoxMSZ3PTIxMCZoPTE0MCZTY2FsZUFuZENsaXBNb2RlPUZpdEFuZENsaXATTGFnYXN0aWdzZ2F0YW4gNjAgRA9TdHLDtm1zbsOkc2JydWsPU3Ryw7Ztc27DpHNicnVrATEGNDQga3ZtDjPCoDQwOCBrci9tw6VuPUxqdXMgJiBmaW4gZW5ydW1tYXJlIG1lZCBzb3ZhbGtvdiBvY2ggYmFsa29uZyBtZWQgc2rDtnV0c2lrdCFkAg0PZBYCZg8VCTkvcGFnZXMvQmVza3Jpdm5pbmcuYXNweD9HVUlEPTQ4SkkzTUNSN05LQ0dPTVMmVFlQPUNNQm9MZ2jJAWh0dHA6Ly92aWN0b3JpYXBhcmt2Mi5jYXBpdGV4LnNlL0NhcGl0ZXhSZXNvdXJjZXMvQ2FwaXRleC5EYXRhbGFnZXIuREJGaWxlL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS5kYmZpbGUuYXNweD9nPTQ4SkkzTUoxMU5LQ0dQRUgmdD1DQmlsZCZkYz0yMDE0LTAyLTE0IDA4OjI5OjQxJnc9MjEwJmg9MTQwJlNjYWxlQW5kQ2xpcE1vZGU9Rml0QW5kQ2xpcBNOeWEgw4Vicm92w6RnZW4gMiBCD1N0csO2bXNuw6RzYnJ1aw9TdHLDtm1zbsOkc2JydWsBMwY3NSBrdm0ONcKgMzI3IGtyL23DpW4AZAIOD2QWAmYPFQk5L3BhZ2VzL0Jlc2tyaXZuaW5nLmFzcHg/R1VJRD00NkhRUUc1QUU2MUNMM0VSJlRZUD1DTUJvTGdoyQFodHRwOi8vdmljdG9yaWFwYXJrdjIuY2FwaXRleC5zZS9DYXBpdGV4UmVzb3VyY2VzL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS9DYXBpdGV4LkRhdGFsYWdlci5EQkZpbGUuZGJmaWxlLmFzcHg/Zz00NkhRU1Y0Rk82M0RNQ01IJnQ9Q0JpbGQmZGM9MjAxMy0xMC0wNyAxMTo0MDoxOSZ3PTIxMCZoPTE0MCZTY2FsZUFuZENsaXBNb2RlPUZpdEFuZENsaXATTnlhIMOFYnJvdsOkZ2VuIDIgQw9TdHLDtm1zbsOkc2JydWsPU3Ryw7Ztc27DpHNicnVrATIGNjIga3ZtDjTCoDg0NSBrci9tw6VuK1RyZXZsaWd0IHNlbmlvcmJvZW5kZSBpIGNlbnRydW0gbWVkIGJhbGtvbmdkAg8PZBYCZg8VCTkvcGFnZXMvQmVza3Jpdm5pbmcuYXNweD9HVUlEPTQ5QklDMEU4R0VUQVE0VE8mVFlQPUNNQm9MZ2jJAWh0dHA6Ly92aWN0b3JpYXBhcmt2Mi5jYXBpdGV4LnNlL0NhcGl0ZXhSZXNvdXJjZXMvQ2FwaXRleC5EYXRhbGFnZXIuREJGaWxlL0NhcGl0ZXguRGF0YWxhZ2VyLkRCRmlsZS5kYmZpbGUuYXNweD9nPTQ5T0JHTDFBMjlHNjFDQUwmdD1DQmlsZCZkYz0yMDE0LTA3LTAxIDE0OjA1OjE3Jnc9MjEwJmg9MTQwJlNjYWxlQW5kQ2xpcE1vZGU9Rml0QW5kQ2xpcA1OaXR2w6RnZW4gMTM0BcOFaHVzBcOFaHVzATQHMTA0IGt2bQ44wqA5Mzcga3IvbcOlbpgBUmVub3ZlcmF0IGvDtmsgbWVkIGRpc2ttYXNraW4gb2NoIHBhcmtldHRnb2x2Lg0KTnkgc3BpcyBtZWQgaMOkbGwgb2NoIHZhcm1sdWZ0c3Vnbi4NClJlbm92ZXJhdCBiYWRydW0gaSBib3R0ZW52w6VuaW5nLiAgICAgUGFya2V0dCBpIGhhbGwgYm90dGVudsOlbmluZy5kZFwLmcQRkYu+wtWNmrU6ihnLVW3K4Ty2te1QTZgLeTaC">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./viktoriapark_files/WebResource(1).axd" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(function () {
+initMap();
+AddMarker(58.4249032446695,15.5896312278466,'49PRRDEB9UT9LO3J');
+AddMarker(58.4066812914682,15.5759561075767,'4A1ASBNGSVINTFIG');
+AddMarker(55.5814834031269,13.052705045398,'4A343SCMR8UE4KK9');
+AddMarker(55.5814834031269,13.052705045398,'4A3ICR9JV8UE66QP');
+AddMarker(55.5802021108976,13.0516685443887,'49OKE9JTI66HV20K');
+AddMarker(56.4505352832254,13.5939321984544,'45QBAHAS4C47TEBC');
+AddMarker(56.5460763563687,13.7387013033653,'495RDHTHJGPAR75S');
+AddMarker(56.4884262132368,13.6136633608823,'495QU8GM1GPAQ9UG');
+AddMarker(55.395560737734,13.5952187744851,'49BIB2F0CETAQ08G');
+AddMarker(59.3949975933997,17.9093312345437,'49BIDSLOEETAQCOO');
+AddMarker(59.3959309002326,17.9088080485329,'49BIDSD9QETAQCJ3');
+AddMarker(56.5484853354392,13.7312517743842,'46HQN3FP061CKQTF');
+AddMarker(56.5450353556954,13.7290664445396,'48JICOGQRNKCH5VM');
+AddMarker(56.5506422250689,13.7313126198472,'48JI3MCR7NKCGOMS');
+AddMarker(56.5506422250689,13.7313126198472,'46HQQG5AE61CL3ER');
+AddMarker(55.9171617021557,14.2782530597339,'49BIC0E8GETAQ4TO');
+setTimeout('SetBounds()', 200);
+});
+//]]>
+</script>
+
+<script src="./viktoriapark_files/ScriptResource.axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="./viktoriapark_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(2).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(3).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(4).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(5).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(6).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(7).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(8).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(9).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(10).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(11).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(12).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(13).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(14).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(15).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(16).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(17).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(18).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(19).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(20).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(21).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(22).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(23).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(24).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(25).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(26).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(27).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(28).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(29).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(30).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(31).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(32).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(33).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(34).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(35).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(36).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(37).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(38).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(39).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(40).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(41).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(42).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(43).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(44).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(45).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(46).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(47).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(48).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(49).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(50).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(51).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(52).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(53).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(54).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(55).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(56).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(57).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(58).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(59).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(60).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(61).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(62).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(63).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(64).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(65).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(66).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(67).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(68).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(69).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(70).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(71).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(72).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(73).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(74).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(75).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(76).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(77).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(78).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(79).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(80).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(81).axd" type="text/javascript"></script>
+<script src="./viktoriapark_files/ScriptResource(82).axd" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdACDH5MFkSf6lkfOLmbriHqZ0+uKJQ5r7EmJnRHpJ7CCnnUTuGAQmSH1lKgVlIRPafGYOE/MFhuEN4kmvtDnJi6Og8534hKFrVTnZaQ4+xHQEEmEEstfzU5riyXCMuXq+goTbN9nzW0YL99lKoJY08MYoxv2/D2lJPj3UUQAgsyQFS5rbUVQdDDUkLZXpY8ejgj6qMWncfmIqfWVt7/XsjSbmd7rioAJojrONByxIj4/c9Vit2oPHe8iBQgaYXHs5u3ibQ197azDfL4dtkKwM3WGhm9poFrz3YBi5hEVSg/wS/tU5KS/HO8edDs5HxztILPNdOR4+FV17UAyRIQQ1W+OjMajAtlEjpsO6yauxoc+tN6Jd4tUg1qPpjXVeEiKcnINbyBjWFQBUFXlyIa5ywvbTp+Y6ohtCPOPYZOAXe8VbJgTNeUUzDKIRA6TC9/6+/h118yoTOCHW1PtvuRo+p224FcV1kskxCTDGOh000MyHdxEghZBVv0boc2NaC2/zVFRiVBL5oWoUQGpHlmhfhJr31ZiHI4kfWzQ65j3MYTmLYqTv+kC5iLZXK5EBxsg84FUdp1z+nYWZ+pirZkxjR3dz1E2/7y6P0aBI8z+I4s3kwdrDRM+DlgKeZ55Aw/VhS2BUUYgXwsuyFW169zdcNQRVjtTdVzRZn7DFyWrI8V/OY1fAe3Pc5xkLLxVauOxEsaQS0cTl6qQmFDXij8Ht4olF">
+</div>
+
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('scriptManager', 'form1', ['tupdSearch','updSearch','tupdList','updList'], [], [], 90, '');
+//]]>
+</script>
+
+
+    <div class="frame-holder">
+        <div class="MapSearchHolder">
+            <div id="map" class="map-area" style="position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0; cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -52px; top: -37px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 204px; top: -37px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 204px; top: -293px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -52px; top: -293px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -52px; top: 219px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 204px; top: 219px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -308px; top: -37px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 460px; top: -37px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -308px; top: 219px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 460px; top: -293px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -308px; top: -293px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 460px; top: 219px;"></div></div></div></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: -52px; top: -37px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 204px; top: -37px;"><canvas draggable="false" height="256" width="256" style="-webkit-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 204px; top: -293px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: -52px; top: -293px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: -52px; top: 219px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 204px; top: 219px;"><canvas draggable="false" height="256" width="256" style="-webkit-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: -308px; top: -37px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 460px; top: -37px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: -308px; top: 219px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 460px; top: -293px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: -308px; top: -293px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 460px; top: 219px;"></div></div></div></div><div style="position: absolute; z-index: 0; left: 0px; top: 0px;"><div style="overflow: hidden; width: 600px; height: 300px;"><img src="./viktoriapark_files/StaticMapService.GetMapImage" style="width: 600px; height: 300px;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -52px; top: -37px;"><img src="./viktoriapark_files/vt(2)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 204px; top: -37px;"><img src="./viktoriapark_files/vt(3)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 204px; top: -293px;"><img src="./viktoriapark_files/vt(4)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -52px; top: -293px;"><img src="./viktoriapark_files/vt(5)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -52px; top: 219px;"><img src="./viktoriapark_files/vt(6)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 204px; top: 219px;"><img src="./viktoriapark_files/vt(7)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -308px; top: -37px;"><img src="./viktoriapark_files/vt(8)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 460px; top: -37px;"><img src="./viktoriapark_files/vt(9)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -308px; top: 219px;"><img src="./viktoriapark_files/vt(10)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 460px; top: -293px;"><img src="./viktoriapark_files/vt(11)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -308px; top: -293px;"><img src="./viktoriapark_files/vt(12)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 460px; top: 219px;"><img src="./viktoriapark_files/vt(13)" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="http://maps.google.com/maps?ll=57.450397,15.4805&z=5&t=m&hl=en-US&gl=US&mapclient=apiv3" title="Click to see this area on Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 62px; height: 26px; cursor: pointer;"><img src="./viktoriapark_files/google_white2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 62px; height: 26px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 165px; bottom: 0px; width: 251px;"><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Map Data</a><span style="">Map data ©2014 GeoBasis-DE/BKG (©2009), Google</span></div></div></div><div style="padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 150px; top: 60px; background-color: white;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2014 GeoBasis-DE/BKG (©2009), Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img src="./viktoriapark_files/mapcnt3.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2014 GeoBasis-DE/BKG (©2009), Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; position: absolute; -webkit-user-select: none; right: 95px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a href="http://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a target="_new" title="Report errors in the road map or imagery to Google" href="http://maps.google.com/maps?ll=57.450397,15.4805&z=5&t=m&hl=en-US&gl=US&mapclient=apiv3&skstate=action:mps_dialog$apiref:1&output=classic" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report a map error</a></div></div><div class="gmnoprint" draggable="false" controlwidth="32" controlheight="84" style="margin: 5px; -webkit-user-select: none; position: absolute; left: 0px; top: 0px;"><div controlwidth="32" controlheight="40" style="cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default; position: absolute; left: 0px; top: 0px;"><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px;"><img src="./viktoriapark_files/cb_scout2.png" draggable="false" style="position: absolute; left: -9px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./viktoriapark_files/cb_scout2.png" draggable="false" style="position: absolute; left: -107px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./viktoriapark_files/cb_scout2.png" draggable="false" style="position: absolute; left: -58px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./viktoriapark_files/cb_scout2.png" draggable="false" style="position: absolute; left: -205px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoprint" controlwidth="0" controlheight="0" style="opacity: 0.6; display: none; position: absolute;"><div title="Rotate map 90 degrees" style="width: 22px; height: 22px; overflow: hidden; position: absolute; cursor: pointer;"><img src="./viktoriapark_files/mapcnt3.png" draggable="false" style="position: absolute; left: -38px; top: -360px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoprint" controlwidth="20" controlheight="39" style="position: absolute; left: 6px; top: 45px;"><div style="width: 20px; height: 39px; overflow: hidden; position: absolute;"><img src="./viktoriapark_files/mapcnt3.png" draggable="false" style="position: absolute; left: -39px; top: -401px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div title="Zoom in" style="position: absolute; left: 0px; top: 2px; width: 20px; height: 17px; cursor: pointer;"></div><div title="Zoom out" style="position: absolute; left: 0px; top: 19px; width: 20px; height: 17px; cursor: pointer;"></div></div></div><div class="gmnoprint" style="margin: 5px; z-index: 0; position: absolute; cursor: pointer; left: 42px; top: 0px;"><div class="gm-style-mtc" style="float: left;"><div draggable="false" title="Show street map" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 1px 6px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; -webkit-background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.14902); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; min-width: 24px; font-weight: 500; background-color: rgb(255, 255, 255); background-clip: padding-box;">Map</div><div style="z-index: -1; padding-top: 2px; -webkit-background-clip: padding-box; border-width: 0px 1px 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); border-left-color: rgba(0, 0, 0, 0.14902); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; position: absolute; left: 0px; top: 15px; text-align: left; display: none; background-color: white; background-clip: padding-box;"><div draggable="false" title="Show street map with terrain" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 3px 8px 3px 3px; direction: ltr; text-align: left; white-space: nowrap; background-color: rgb(255, 255, 255);"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; border: 1px solid rgb(198, 198, 198); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; width: 13px; height: 13px; vertical-align: middle; background-color: rgb(255, 255, 255);"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img src="./viktoriapark_files/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div></div></div><div class="gm-style-mtc" style="float: left;"><div draggable="false" title="Show satellite imagery" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 1px 6px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; -webkit-background-clip: padding-box; border-width: 1px 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-top-color: rgba(0, 0, 0, 0.14902); border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; min-width: 43px; background-color: rgb(255, 255, 255); background-clip: padding-box;">Satellite</div><div style="z-index: -1; padding-top: 2px; -webkit-background-clip: padding-box; border-width: 0px 1px 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); border-left-color: rgba(0, 0, 0, 0.14902); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; position: absolute; right: 0px; top: 15px; text-align: left; display: none; background-color: white; background-clip: padding-box;"><div draggable="false" title="Zoom in to show 45 degree view" style="color: rgb(184, 184, 184); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 3px 8px 3px 3px; direction: ltr; text-align: left; white-space: nowrap; display: none; background-color: rgb(255, 255, 255);"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; border: 1px solid rgb(241, 241, 241); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; width: 13px; height: 13px; vertical-align: middle; background-color: rgb(255, 255, 255);"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img src="./viktoriapark_files/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">45°</label></div><div draggable="false" title="Show imagery with street names" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 3px 8px 3px 3px; direction: ltr; text-align: left; white-space: nowrap; background-color: rgb(255, 255, 255);"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; border: 1px solid rgb(198, 198, 198); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; width: 13px; height: 13px; vertical-align: middle; background-color: rgb(255, 255, 255);"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img src="./viktoriapark_files/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div>
+            <div class="search">
+                <div id="updSearch">
+	
+                        <label>Stad</label>
+                        <select name="ddlStad" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ddlStad\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlStad">
+		<option selected="selected" value="Välj stad">Välj stad</option>
+		<option value="Alla">Alla</option>
+		<option value="Linköping">Linköping</option>
+		<option value="Malmö">Malmö</option>
+		<option value="Markaryd">Markaryd</option>
+		<option value="Skurup">Skurup</option>
+		<option value="Spånga">Spånga</option>
+		<option value="Stockholm">Stockholm</option>
+		<option value="Strömsnäsbruk">Strömsnäsbruk</option>
+		<option value="Åhus">Åhus</option>
+
+	</select>
+
+                        <label>Område</label>
+                        <select name="ddlOmrade" id="ddlOmrade">
+		<option selected="selected" value="Välj område">Välj område</option>
+		<option value="Alla">Alla</option>
+		<option value="Abbekås">Abbekås</option>
+		<option value="Markaryd">Markaryd</option>
+		<option value="Nygård">Nygård</option>
+		<option value="Rosengård">Rosengård</option>
+		<option value="Ryd">Ryd</option>
+		<option value="Strömsnäsbruk">Strömsnäsbruk</option>
+		<option value="Tensta">Tensta</option>
+		<option value="Timsfors">Timsfors</option>
+		<option value="Åhus">Åhus</option>
+
+	</select>
+
+                        <div style="margin-bottom:5px;">
+                            <span id="lblRumMin">1</span>
+                            <span id="lblRum" style="padding:0px 35px;">Antal rum</span>
+                            <span id="lblRumMax">7</span>
+                        </div>
+                        <div style="height:35px;">
+                            <div class="ajax__multi_slider_default" style="position: relative; outline: none;"><div id="multiSliderRum_outer" tabindex="-1" class="ajax__multi_slider_default inner_rail_horizontal" style="outline: none; width: 150px;"><a id="multiSliderRum_handle_0" class="handle_horizontal" style="overflow: hidden; left: 0px; top: 0px;"><div></div></a><a id="multiSliderRum_handle_1" class="ajax__multi_slider_default handle_horizontal" style="overflow: hidden; left: 140px; top: 0px;"><div></div></a></div></div><input name="TextBox1" type="text" id="TextBox1" class="ajax__multi_slider_default" style="display: none;">
+                            <input type="hidden" name="multiSliderRum_ClientState" id="multiSliderRum_ClientState">
+
+                            <input type="hidden" name="rangeEnd" id="rangeEnd" value="7">
+                            <input type="hidden" name="rangeStart" id="rangeStart" value="1">                            
+
+                        </div>
+
+                        <div style="margin-bottom:5px;">
+                            <span id="lblHyraMin">1000</span>
+                            <span id="lblHyra" style="padding:0px 25px;">Hyra</span>
+                            <span id="lblHyraMax">15000</span>
+                        </div>
+                        <div style="height:35px;">
+                            <div class="ajax__multi_slider_default" style="position: relative; outline: none;"><div id="multiSliderHyra_outer" tabindex="-1" class="ajax__multi_slider_default inner_rail_horizontal" style="outline: none; width: 150px;"><a id="multiSliderHyra_handle_0" class="handle_horizontal" style="overflow: hidden; left: 0px; top: 0px;"><div></div></a><a id="multiSliderHyra_handle_1" class="handle_horizontal" style="overflow: hidden; left: 140px; top: 0px;"><div></div></a></div></div><input name="TextBox2" type="text" id="TextBox2" class="ajax__multi_slider_default" style="display: none;">
+                            <input type="hidden" name="multiSliderHyra_ClientState" id="multiSliderHyra_ClientState">
+
+                            <input type="hidden" name="rangeStartHyra" id="rangeStartHyra" value="1000">
+                            <input type="hidden" name="rangeEndHyra" id="rangeEndHyra" value="15000">                            
+
+                        </div>
+                        
+                        <input type="submit" name="btnSearch" value="Sök" id="btnSearch" class="btn">
+                    
+</div>
+            </div>
+        </div>
+
+        <div class="list-holder">
+            
+            <div class="list-content">
+                <div id="updList">
+	
+                        
+                                <div class="list-row">
+                                    <a href="http://victoriaparkv2.capitex.se/pages/Beskrivning.aspx?GUID=49PRRDEB9UT9LO3J&TYP=CMBoLgh" target="_blank">
+                                        <div class="list-image">
+                                            <img src="./viktoriapark_files/Capitex.Datalager.DBFile.dbfile.aspx">
+                                        </div>
+                                        <div class="list-desc-content">
+                                            <div class="list-adress">
+                                                <h4>Nämndemansgården 6</h4>
+                                                <h4><small>Linköping</small></h4>
+                                                <h4><small>Nygård</small></h4>
+                                            </div>
+                                            <div class="list-facts">
+                                                <h4>BOSTAD</h4>
+                                                <table>
+                                                    <tbody><tr>
+                                                        <td width="50px"><h4><small>ROK</small></h4></td>
+                                                        <td><h5> 3</h5></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h4><small>AREA</small></h4></td>
+                                                        <td><h5> 86 kvm</h5></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h4><small>HYRA</small></h4></td>
+                                                        <td><h5> 6&nbsp;006 kr/mån</h5></td>
+                                                    </tr>
+                                                </tbody></table>                                                
+                                            </div>
+                                            <div class="list-desc">
+                                                
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            
+                                <div class="list-row">
+                                    <a href="http://victoriaparkv2.capitex.se/pages/Beskrivning.aspx?GUID=4A1ASBNGSVINTFIG&TYP=CMBoLgh" target="_blank">
+                                        <div class="list-image">
+                                            <img src="./viktoriapark_files/Capitex.Datalager.DBFile.dbfile(1).aspx">
+                                        </div>
+                                        <div class="list-desc-content">
+                                            <div class="list-adress">
+                                                <h4>Ryds Allé 12 A</h4>
+                                                <h4><small>Linköping</small></h4>
+                                                <h4><small>Ryd</small></h4>
+                                            </div>
+                                            <div class="list-facts">
+                                                <h4>BOSTAD</h4>
+                                                <table>
+                                                    <tbody><tr>
+                                                        <td width="50px"><h4><small>ROK</small></h4></td>
+                                                        <td><h5> 3</h5></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h4><small>AREA</small></h4></td>
+                                                        <td><h5> 80 kvm</h5></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h4><small>HYRA</small></h4></td>
+                                                        <td><h5> 9&nbsp;111 kr/mån</h5></td>
+                                                    </tr>
+                                                </tbody></table>                                                
+                                            </div>
+                                            <div class="list-desc">
+                                                
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            
+                                <div class="list-row">
+                                    <a href="http://victoriaparkv2.capitex.se/pages/Beskrivning.aspx?GUID=4A343SCMR8UE4KK9&TYP=CMBoLgh" target="_blank">
+                                        <div class="list-image">
+                                            <img src="./viktoriapark_files/Capitex.Datalager.DBFile.dbfile(2).aspx">
+                                        </div>
+                                        <div class="list-desc-content">
+                                            <div class="list-adress">
+                                                <h4>Ramels väg 67</h4>
+                                                <h4><small>Malmö</small></h4>
+                                                <h4><small>Rosengård</small></h4>
+                                            </div>
+                                            <div class="list-facts">
+                                                <h4>BOSTAD</h4>
+                                                <table>
+                                                    <tbody><tr>
+                                                        <td width="50px"><h4><small>ROK</small></h4></td>
+                                                        <td><h5> 3</h5></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h4><small>AREA</small></h4></td>
+                                                        <td><h5> 86,2 kvm</h5></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h4><small>HYRA</small></h4></td>
+                                                        <td><h5> 7&nbsp;308 kr/mån</h5></td>
+                                                    </tr>
+                                                </tbody></table>                                                
+                                            </div>
+                                            <div class="list-desc">
+                                                
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            
+                                
+                            
+                                
+                            
+                    
+</div>                
+            </div>
+        </div>
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.MultiHandleSliderBehavior, {"ClientStateFieldID":"multiSliderRum_ClientState","_isServerControl":true,"enableHandleAnimation":true,"enableKeyboard":false,"enableMouseWheel":false,"handleAnimationDuration":0.1,"id":"multiSliderRum","maximum":7,"minimum":1,"multiHandleSliderTargets":[{"ControlID":"rangeStart","HandleCssClass":null,"Decimals":0,"Offset":0},{"ControlID":"rangeEnd","HandleCssClass":null,"Decimals":0,"Offset":0}],"showHandleDragStyle":true,"showHandleHoverStyle":true,"steps":7,"tooltipText":"{0}"}, {"drag":Drag}, null, $get("TextBox1"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.MultiHandleSliderBehavior, {"ClientStateFieldID":"multiSliderHyra_ClientState","_isServerControl":true,"enableHandleAnimation":true,"enableKeyboard":false,"enableMouseWheel":false,"handleAnimationDuration":0.1,"id":"multiSliderHyra","maximum":15000,"minimum":1000,"multiHandleSliderTargets":[{"ControlID":"rangeStartHyra","HandleCssClass":null,"Decimals":0,"Offset":0},{"ControlID":"rangeEndHyra","HandleCssClass":null,"Decimals":0,"Offset":0}],"showHandleDragStyle":true,"showHandleHoverStyle":true,"steps":29,"tooltipText":"{0}"}, {"drag":Drag}, null, $get("TextBox2"));
+});
+//]]>
+</script>
+<div style="position: absolute; width: 1px; height: 1px; overflow: hidden; background: none;"></div><div style="position: absolute; width: 1px; height: 1px; overflow: hidden; background: none;"></div><div style="position: absolute; width: 1px; height: 1px; overflow: hidden; background: none;"></div><div style="position: absolute; width: 1px; height: 1px; overflow: hidden; background: none;"></div></form>
+
+
+</body></html>

@@ -1,0 +1,387 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv">
+<head>
+<meta name="keywords" content=""/>
+
+
+<title>Stångåstaden</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js?v2"></script>
+<script type="text/javascript" src="js/imagePlayer/jquery.f2ImagePlayer.js?v2"></script>
+<link rel="stylesheet" type="text/css" href="https://fast2.stangastaden.se/stylesheet.php?templateid=27" />
+
+
+</head>
+
+<body>
+<!-- start page -->
+<div id="page">
+
+  <!-- start content -->
+  <div id="content" class="clearfix">
+    
+    <div id="mainhtml">
+      <div id="maincontent">
+        <!--<table style="margin-bottom: 10px" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tbody>
+        <tr>
+            <td class="pageTitle">Sök bostad / Lediga lägenheter</td>
+        </tr>
+    </tbody>
+</table>-->
+        <div title="sok_ledigt" id="cmsmenuid"> </div>
+<table cellspacing="0" cellpadding="0" border="0" class="mainouterhtml">
+    <tbody>
+        <tr>
+            <td valign="top" class="maincontent"><form id="_id5" name="_id5" method="post" action="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9kZXRhaWxzLmpzZg%3D%3D" enctype="application/x-www-form-urlencoded" style="padding:0 0 10px 15px;">
+			<strong><script type="text/javascript"><!--
+
+
+	function oamSetHiddenInput(formname, name, value)
+	{
+		var form = document.forms[formname];
+		if(typeof form.elements[name]=='undefined')
+		{
+			var newInput = document.createElement('input');
+			newInput.setAttribute('type','hidden');
+			newInput.setAttribute('id',name);
+			newInput.setAttribute('name',name);
+			newInput.setAttribute('value',value);
+			form.appendChild(newInput);
+		}
+		else
+		{
+			form.elements[name].value=value;
+		}
+		
+	}
+	
+	
+	function oamClearHiddenInput(formname, name, value)
+	{
+		var form = document.forms[formname];
+		if(typeof form.elements[name]!='undefined')
+		{
+			form.elements[name].value=null;
+		}
+		
+	}
+	
+	function oamSubmitForm(formName, linkId, target, params)
+	{
+		
+		var clearFn = 'clearFormHiddenParams_'+formName.replace(/-/g, '\$:').replace(/:/g,'_');
+		if(typeof eval('window.'+clearFn)!='undefined')
+		{
+			eval('window.'+clearFn+'(formName)');
+		}
+		
+		var oldTarget = '';
+		if((typeof target!='undefined') && target != null)
+		{
+			oldTarget=document.forms[formName].target;
+			document.forms[formName].target=target;
+		}
+		if((typeof params!='undefined') && params != null)
+		{
+			for(var i=0; i<params.length; i++)
+			{
+				oamSetHiddenInput(formName,params[i][0], params[i][1]);
+			}
+			
+		}
+		
+		oamSetHiddenInput(formName,formName +':'+'_idcl',linkId);
+		
+		if(document.forms[formName].onsubmit)
+		{
+			var result=document.forms[formName].onsubmit();
+			if((typeof result=='undefined')||result)
+			{
+				document.forms[formName].submit();
+			}
+			
+		}
+		else 
+		{
+			document.forms[formName].submit();
+		}
+		if(oldTarget==null) oldTarget='';
+		document.forms[formName].target=oldTarget;
+		if((typeof params!='undefined') && params != null)
+		{
+			for(var i=0; i<params.length; i++)
+			{
+				oamClearHiddenInput(formName,params[i][0], params[i][1]);
+			}
+			
+		}
+		
+		oamClearHiddenInput(formName,formName +':'+'_idcl',linkId);return false;
+	}
+	
+
+//--></script><a href="#" onclick="return oamSubmitForm('_id5','_id5:_id7');" id="_id5:_id7" title="Tillbaka">&laquo; &#197;ter s&ouml;kresultat</a>
+			</strong><input type="hidden" name="_id5_SUBMIT" value="1" /><input type="hidden" name="_id5:_idcl" /><input type="hidden" name="_id5:_link_hidden_" /><script type="text/javascript"><!--
+
+	function clear__5Fid5()
+	{
+		clearFormHiddenParams__id5('_id5');
+	}
+	
+	function clearFormHiddenParams__id5(currFormName)
+	{
+		var f = document.forms['_id5'];
+		f.elements['_id5:_idcl'].value='';
+		f.elements['_id5:_link_hidden_'].value='';
+		f.target='';
+	}
+	
+	clearFormHiddenParams__id5();
+//--></script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="rO0ABXVyABNbTGphdmEubGFuZy5PYmplY3Q7kM5YnxBzKWwCAAB4cAAAAAN0AAMxMDZwdAArL3BhZ2VzL21hcmtuYWQvX3B1YmxpYy9vYmplY3RfZGV0YWlscy54aHRtbA==" /></form><?xml version="1.0" encoding="iso-8859-1"?>
+<f2k>
+	
+	<style><!--
+
+		h1 {
+			font-size: 1.4em;
+			line-height: 2em;
+		}
+		
+		.picObjectThumbContainer {
+			min-width:480px;
+			width: 480px;
+			text-align: center;
+			vertic-align:middle;
+			padding:0 0 10px 15px;
+		}
+			.picObjectThumbContainer img {
+				width: auto;
+				height: auto;
+			}
+		.imageContainer img { cursor: pointer; }
+	
+--></style>
+
+    <table class="objectDetails">
+	
+        <tr>
+            <td class="picObjectThumbContainer">
+			
+				<script><!--
+
+					var counter = 1;
+					var images = [];
+					images.push({
+						image: escape("FastPortalStanga/images/f2k/detail-image/WEBBILD1/Mardtorpsgatan_27_29_31.png"),
+						thumbnail : 'FastPortalStanga/images/spacer.gif',
+						original : escape("FastPortalStanga/images/f2k/WEBBILD1/Mardtorpsgatan_27_29_31.png"),
+						//text: 'Mardtorpsgatan_27_29_31.png'
+						text: ' ' + (counter++)
+					});
+					images.push({
+						image: escape("FastPortalStanga/images/f2k/detail-image/WEBBILD2/Mardtorpsgatan_27_29_311.png"),
+						thumbnail : 'FastPortalStanga/images/spacer.gif',
+						original : escape("FastPortalStanga/images/f2k/WEBBILD2/Mardtorpsgatan_27_29_311.png"),
+						//text: 'Mardtorpsgatan_27_29_311.png'
+						text: ' ' + (counter++)
+					});
+					images.push({
+						image: escape("FastPortalStanga/images/f2k/detail-image/WEBBILD2/Mardtorpsgatan_27_29_312.png"),
+						thumbnail : 'FastPortalStanga/images/spacer.gif',
+						original : escape("FastPortalStanga/images/f2k/WEBBILD2/Mardtorpsgatan_27_29_312.PNG"),
+						//text: 'Mardtorpsgatan_27_29_312.PNG'
+						text: ' ' + (counter++)
+					});
+
+					$("document").ready(function () {
+						if ($.fn.f2ImagePlayer) {
+							  $("#picture").f2ImagePlayer( {
+								imageList: images,
+								showImagePagination: true, 
+								showImageText: false, 
+								showImageThumbnails : false,
+								linkToOriginal : true, 
+								showTubnailTipsy: false
+							} );
+						}
+					});
+				
+//--></script>
+				 <img id="picture" />
+
+            </td>
+		
+            <td rowspan="4" class="separatorVertical">
+			
+
+
+                <h1>M&#197;RDTORPSGATAN 31</h1>
+
+				
+                <p>Praktisk 1:a i Ryd centrum. Vardagsrummet &auml;r omtapetserat under 2014.
+                </p>
+				
+                <table>
+                    <tr>
+                        <td class="label">Omr&#229;de:</td>
+                        <td class="value">Ryd
+							
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Storlek:</td>
+                        <td class="value" style="text-transform: lowercase;">1 RUM KOKVR&#197;</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Boyta:</td>
+                        <td class="value">30 m&#178;</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Hyra:</td>
+                        <td class="value">2&#160;491 kr/m&#229;n
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">V&#229;ning:</td>
+                        <td class="value">
+                            4:e  v&#229;ningen av 5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Ledigt fr&#229;n:</td>
+                        <td class="value">
+                            2014-12-01
+                        </td>
+                    </tr>
+                </table>
+
+				<div style=" padding: 10px 0 0 0; border-bottom: 1px dotted #777; border-top: 1px dotted #777;">
+						<div class="infoFramePropertyItem" style="background-image: url('/images/elements/ico_property_elevator_blue.gif');" onmouseover="showAltTextF2K('divMsgProp1003', 'Det finns hiss i byggnaden.', false)" onmouseout="hideAltTextF2K('divMsgProp1003')">
+							<div class="single-row">
+								<b>Hiss</b>
+							</div>
+							<div id="divMsgProp1003" class="altText" style="margin-top: 5px;"></div>
+						</div>
+				
+				</div>
+
+
+				<div style=" padding: 10px 0 0 0;">
+					<a href="#" onclick="window.open('http://maps.google.se?q=M%C5RDTORPSGATAN+31%2C+58432');">
+						<strong>Karta (extern l&auml;nk)&#160;&raquo;
+						</strong>
+					</a>
+				</div>
+					<div style=" padding: 10px 0 0 0;">
+						<a href="#" onclick="window.open('/FastPortalStanga/images/f2k/ORIT/mar1_30_0a.pdf')">
+							<strong>Planl&ouml;sning (PDF)&#160;&raquo;
+							</strong>
+						</a>
+					</div>
+				
+            </td>
+        </tr>
+        <tr>
+            <td class="classHide">
+		<p style="padding: 0 0 20px  15px; width: 482px;">
+		</p>
+            </td>
+        </tr>
+        <tr>	
+            <td style="padding-left: 15px;">
+			
+
+			
+				
+                <table style="width: 482px;" class="boxDefault">
+                    <tbody>
+                        <tr>
+                            <td class="boxTopLeft"></td>
+                            <td class="boxTop"></td>
+                            <td class="boxTopRight"></td>
+                        </tr>
+                        <tr>
+                            <td class="boxLeft"></td>
+                            <td class="boxMain">
+                                <div>&#160;</div>
+<table style="width: 100%">
+	<tr>
+		<td style="width: 30%">
+                                            <div class="boxLabel">Intresseanm&auml;l senast</div>
+                                            <div class="boxValue">2014-09-02
+                                                kl. 24:00
+                                            </div>
+                                            <div>&#160;</div>
+
+		</td>
+		<td style="width: 20px">&#160;</td>
+		<td>
+										
+											<span class="boxValue">200 stycken
+											</span>
+											<span class="boxLabel">kunder har l&auml;mnat intresse f&ouml;r den h&auml;r bostaden. </span>
+												<span class="boxLabel">F&ouml;r att vara bland de fem fr&auml;msta kr&auml;vs just nu cirka</span>
+												<span class="boxValue">1632 po&auml;ng</span>
+							</td>
+						</tr>
+					</table>
+                                <div>&#160;</div>
+                            </td>
+                            <td class="boxRight"></td>
+                        </tr>
+                            <tr>
+                                <td class="boxLeft"></td>
+                                <td>
+                                    <div class="boxSeparatorHorizontal">&#160;</div>
+                                </td>
+                                <td class="boxRight"></td>
+                            </tr>
+                            <tr>
+                                <td class="boxLeft"></td>
+                                <td class="boxMain">
+                                    <div>&#160;</div><form id="_id57" name="_id57" method="post" action="https://fast2.stangastaden.se/index.php?page=sok_ledigt&qsok_ledigtunnamed1=aHR0cDovL2xvY2FsaG9zdDo4MDgwL0Zhc3RQb3J0YWxTdGFuZ2EvcGFnZXMvbWFya25hZC9fcHVibGljL29iamVjdF9kZXRhaWxzLmpzZg%3D%3D" enctype="application/x-www-form-urlencoded">
+												
+                                                <div class="boxValue">F&ouml;r att g&ouml;ra en intresseanm&auml;lan p&#229; denna bostad beh&ouml;ver du vara inloggad!</div>
+                                                <br />
+                                                <strong>
+                                                    <a href="#" onclick="document.location.href='index.php?page=login&amp;returnurl=module.php?mod=loggedin%26f2k_objectid=27B01031043'" class="btn"><span>Logga in h&auml;r&#160;&raquo;</span></a>
+                                                </strong><input type="hidden" name="_id57_SUBMIT" value="1" /><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="rO0ABXVyABNbTGphdmEubGFuZy5PYmplY3Q7kM5YnxBzKWwCAAB4cAAAAAN0AAMxMDZwdAArL3BhZ2VzL21hcmtuYWQvX3B1YmxpYy9vYmplY3RfZGV0YWlscy54aHRtbA==" /></form>
+									
+                                </td>
+                                <td class="boxRight"></td>
+                            </tr>
+                        <tr>
+                            <td class="boxBottomLeft"></td>
+                            <td class="boxBottom"></td>
+                            <td class="boxBottomRight"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+</f2k>
+            
+    <!-- MYFACES JAVASCRIPT -->
+
+</td>
+        </tr>
+    </tbody>
+</table>
+      </div>
+    </div>
+
+  </div>
+  <!-- end content -->
+
+</div>
+<!-- end page -->
+
+</body>
+</html>
+<!-- 0.072517 / 28 -->
+

@@ -1,0 +1,158 @@
+
+<!-- saved from url=(0267)http://www.blocket.com/fif.html?s=1#eas_308_iframe|%2Feas%3Fcu%3D308%3Bcre%3Dmu%3Btarget%3D_blank%3Bjs%3Dy%3Bplace%3D14%26amp%3Bcat1%3Du%26amp%3Bcat2%3D3000%26amp%3Bcat3%3D%26amp%3Bkw2%3D%26amp%3BEAS_num%3D%26amp%3BEASTnp%3Dnp3664%7Cnp4394%26amp%3Bnow%3D1410108769812 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Friendly iframe</title>
+
+		
+			
+			<link href="blocket_eas.css" rel="stylesheet" type="text/css">
+			
+		
+		
+			
+			<script type="text/javascript" src="EAS_tag.1.0.js"></script>
+		
+		<script type="text/javascript">
+			var fif = {
+	getSize: function(settings) {
+		"use strict";
+		settings = settings || {};
+		var width = settings.width ? settings.width : Math.max(document.body.scrollWidth, document.body.clientWidth);
+		var height = settings.height ? settings.height : Math.max(document.body.scrollHeight, document.body.clientHeight);
+
+		if (width < "20" || height < "20") {
+			return false;
+		}
+
+		return {
+			width: width,
+			height: height
+		};
+	},
+	resize_height_ondemand: function(target_element, settings) {
+		"use strict";
+		settings = settings || {};
+
+		if (typeof target_element === 'object') {
+			var o = {
+				width: Math.max(document.body.scrollWidth, document.body.clientWidth),
+				height: target_element.clientHeight,
+				settings: settings
+			}
+			fif.sendpost(o);
+		}
+	},
+	resize: function(settings) {
+		"use strict";
+		settings = settings || {};
+		var that = this;
+
+		// Listen for a reply from the parent frame to make sure that everything
+		// worked and we can stop sending messages.
+		var handle_reply = function(event) {
+			var data = JSON.parse(event.data);
+			if (data.success === true) {
+				clearInterval(that.interval);
+			}
+		}
+
+		if (window.addEventListener) {
+			window.addEventListener("message", handle_reply, false);
+		} else if (window.attachEvent) {
+			window.attachEvent("onmessage", handle_reply);
+		}
+		this.interval = setInterval(function() {
+			var o = that.getSize(settings);
+
+			if (typeof o === "object") {
+				o.settings = settings;
+				fif.sendpost(o);
+			}
+			if (fif.tries-- < 0) {
+				clearInterval(that.interval);
+			}
+		}, 100);
+	},
+	tries: 30,
+	sendpost: function(o) {
+		"use strict";
+		if (typeof o === "object") {
+			o.func = "resize_iframe";
+			if (fif.target !== undefined) {
+				o.target = fif.target;
+			} else {
+				o.target = location.hash;
+			}
+			window.parent.postMessage(JSON.stringify(o), "http://www.blocket.se");
+		}
+	},
+}
+
+
+		</script>
+	</head>
+
+	<body id="fif" class="linux  chrome chrome_36">
+		<script type="text/javascript">
+			var hash;
+			var url_end;
+			var parts;
+
+			function addEvent( obj, type, fn ) {
+				// IE 8, see: http://stackoverflow.com/questions/6927637/addeventlistener-in-internet-explorer
+				if ( typeof obj.attachEvent !== 'undefined' && obj.attachEvent ) {
+					obj['e'+type+fn] = fn;
+					obj[type+fn] = function(){obj['e'+type+fn]( window.event );}
+					obj.attachEvent( 'on'+type, obj[type+fn] );
+				} else {
+					obj.addEventListener( type, fn, false );
+				}
+			}
+
+			addEvent(window, 'load', function() {
+				fif.resize();
+			});
+
+			if (location.href.indexOf('#') !== -1) {
+				// The reason we dont use location.hash in this case is because of douchebag firefox
+				// see: stackoverflow.com/questions/4835784/firefox-automatically-decoding-encoded-parameter-in-url-does-not-happen-in-ie
+				hash = "#" + location.href.split("#")[1];
+			}
+
+			parts = hash.split("|");
+			fif.target = parts[0];
+
+			
+				if (parts[1] !== undefined) {
+					url_end = decodeURIComponent(parts[1]);
+					url_end = url_end.replace(/["']/g, "");
+				} else {
+					url_end = "";
+				}
+
+				fif.scriptSrc = "//ads.aftonbladet.se/" + url_end;
+
+				function getUrlVars(str) {
+					if (str === undefined) {
+						return null;
+					}
+					var href = str.split(/&amp;|&/);
+					var o = {};
+					for (var k in href) {
+						if (!href[k].match(";")) {
+							var getParam = href[k].split("=");
+							o[getParam[0]] = getParam[1];
+						}
+					}
+					return o;
+				}
+
+				var myparams = getUrlVars(fif.scriptSrc.split("?")[1]);
+
+				
+				document.write("<scr" + 'ipt type="text/javascript" src="' + fif.scriptSrc + '"></scr' + "ipt>");
+			
+		</script><script type="text/javascript" src="eas(1)"></script><!-- No matching campaign -->
+	
+
+</body></html>

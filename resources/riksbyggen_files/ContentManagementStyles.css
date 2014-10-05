@@ -1,0 +1,235 @@
+﻿.HtmlView
+{
+	background-color:white;
+	border-bottom-width:medium;
+	border-bottom-style:solid;
+	border-bottom-color:transparent;
+	border-right-width:medium;
+	border-right-color:transparent;
+	border-right-style:solid;
+	border-top-width:medium;
+	border-top-color:transparent;
+	border-top-style:solid;
+	border-left-width:medium;
+	border-left-color:transparent;
+	border-left-style:solid;
+}
+.FirstDiv
+{
+	background-color:white;
+	border-bottom-width:medium;
+	border-bottom-style:solid;
+	border-bottom-color:transparent;
+	border-right-width:medium;
+	border-right-color:transparent;
+	border-right-style:solid;
+	border-top-width:medium;
+	border-top-color:transparent;
+	border-top-style:solid;
+	border-left-width:medium;
+	border-left-color:transparent;
+	border-left-style:solid;
+	
+}
+.toolbar
+{
+
+ background-repeat:repeat;
+
+}
+.thead
+{
+	background-color:White;
+	border-bottom-color:Black;
+	border-bottom-width:thin;
+	border-bottom-style:solid;
+	font:caption;
+	color:White;
+}
+.insertEmo
+{
+	background-color:white;
+	border-style:solid;
+	border-width:thin;
+	border-color:Black;
+}
+
+
+.thumbNormal 
+{
+    width: 105px;
+    float:left; 
+    text-align:center; 
+    padding-top:15px;
+    border:1px solid #FFFFFF;
+}
+.thumbNormalMouseOver
+{
+	width: 105px;
+    float:left; 
+    text-align:center; 
+    padding-top:15px;
+    background-color:#F0F8FD;
+    border:1px solid #D8F0FA;
+    cursor:pointer;
+}
+.thumbSelected 
+{
+	width: 105px;
+    float:left; 
+    text-align:center; 
+    padding-top:15px;
+	background-color:#CFECFA;
+    border:1px solid #AFAFAF;
+    border-spacing:1px;
+}
+.thumbSelectedMouseOver
+{
+    width: 105px;
+    float:left; 
+    text-align:center; 
+    padding-top:15px;
+    background-color:#E0F8FD;
+    border:1px solid #AFAFAF;
+    cursor:pointer;
+}
+
+/* Styles för uppladdning av bilder */
+/* Stor rubrik*/
+.H1
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+	line-height: 18px;
+}
+
+/* liten rubrik*/
+.H2
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Huvudpanel runt andra paneler */
+.MainPanel
+{
+	margin-bottom:0px;
+	padding:10px 10px 10px 10px;
+	border-style:solid;
+	border-width: 1px;
+	border-color: #999999;
+}
+
+/* Panel med ljus bakgrund */
+.LightPanel
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	border:1px solid #AFAFAF;
+	background-color: #F6F6F6;
+}
+
+/* Panel med mörk bakgrund */
+.DarkPanel
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+    border: 1px solid #EFEFEF;
+	background-color: #dddddd;
+}
+
+
+/* Generell knapp */
+.ButtonGeneral
+{
+	font-family: 		Verdana, Arial, Helvetica, sans-serif;
+	font-size: 			10px;
+}
+
+/* Brödtext */
+.PlainText
+{
+	color: 				#000000;
+	font-family: 		Verdana, Arial, Helvetica, sans-serif;
+	font-size: 			11px;
+	font-weight: 		normal;
+	text-decoration: 	none;
+	line-height: 		13px;
+}
+
+.ModalPopupBackground
+{
+	filter: alpha(opacity=50);
+    opacity: 0.2;
+    background-color: #000000;
+}
+
+.ModalPopupPanel
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+    padding: 10px 10px 10px 10px;
+	color: #000000;
+	text-decoration: none;
+	border: 1px none #EFEFEF;
+	background-color: #ffffff;
+	height:90px;
+	-webkit-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.35); 
+	-moz-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.35); 
+	box-shadow:3px 3px 5px rgba(0, 0, 0, 0.35);
+}
+
+.ModalPopupPanelDark
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+    padding: 10px 10px 10px 10px;
+	color: #000000;
+	text-decoration: none;
+	border: 1px none #EFEFEF;
+	background-color: #F0F0F0;
+	height:90px;
+	-webkit-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.35); 
+	-moz-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.35); 
+	box-shadow:3px 3px 5px rgba(0, 0, 0, 0.35);
+}
+
+.ContentManagementPanelNormal 
+{
+    border:none
+}
+
+.ContentManagementPanelDistinct
+{
+    border:1px solid #cecece
+}
+
+.ContentManagementPanelButtons 
+{
+    float: right; 
+    text-align: right; 
+    margin-right: 4px
+}
+
+.ContentManagementPanelLink
+{
+    clear:both; 
+    float:left; 
+    margin-top:10px
+}
+
+

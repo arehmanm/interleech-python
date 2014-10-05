@@ -1,0 +1,96 @@
+
+p.errormessage{background-color:#FFFF00;}
+div.informationbox{width:500px;margin-top:5px;margin-left:115px;background-color:#aaddee;border:1px solid #000000;clear:right;padding:0em 1em 0.1em 1em;text-align:center;}
+div.statusmessagebox{width:500px;margin-top:5px;margin-left:115px;background-color:#aaddee;border:1px solid #000000;clear:right;padding:0em 1em 0.1em 1em;text-align:center;}
+div.statusmessagebox.error{background-color:#FF0000;}
+div.formcontent{width:500px;margin-top:15px;margin-bottom:15px;clear:right;padding:1em 1em 0.1em 1em;text-align:left;}
+.formelementerror{border:solid 1px red;padding:2px;}
+.formerrormesage{color:red;}
+.forumthreads{border:solid 1px #789eb8;}
+.forumthreads table{border:none;background:none;width:100%;padding:0;margin:0;}
+.forumthreads th{background:#98b5d4;}
+.forumthreads td{background:none;}
+.forumthreads td,.forumthreads th{border-bottom:solid 1px #789eb8;border-top:solid 1px #789eb8;padding-left:0.5em;padding-right:0.5em;}
+.forumthreads .firstcolumn{width:50%;}
+.forumthreads .emptyforum{text-align:center;}
+.forumthreads .forumtoolbar{background-color:#E7EFFB;}
+.forumform{background-color:#E7EFFB;padding:1em;border:solid 1px #789eb8;}
+.forumform table{border:none;background:none;width:100%;}
+.forumform td,.forumform tr{border:none;}
+.forumform input{width:50%;}
+.forumform .button{width:auto;text-align:center;}
+.forumform textarea{width:96%;}
+.forumpaging{text-align:center;}
+.forumpost{border:solid #789eb8 1px;margin-top:1em;}
+.forumpost .postheader{background-color:#98b5d4;}
+.forumpost .date{float:right;padding-left:0.5em;padding-right:0.5em;}
+.forumpost .author{float:left;padding-right:0.5em;}
+.forumpost .clearer{clear:both;}
+.forumpost .postbody{padding-left:0.5em;padding-right:0.5em;}
+.forumpost .postfooter{border-top:1px solid #98b5d4;margin-left:0.5em;margin-right:0.5em;}
+.forumpost .reply{float:right;padding-left:0.5em;padding-right:0.5em;}
+.forumpost .quote{margin-left:2em;margin-top:1ex;}
+.forumpost .quote q{quotes:none;font-style:italic;display:block;}
+.forumerror{color:red;}
+div.markedlink{border:2px solid #d8e7fe;background-color:#eef5ff;padding-left:5px;}
+div.marked-background{background-color:#eee;padding:5px;}
+h2.list-item{margin-bottom:0;}
+div.news{clear:both;padding:0;border:0;margin:0;}
+.large{margin-top:10px;}
+.large a,.large a:link,.large a:visited{font-family:ScalaSansWeb-Cond,"Arial Narrow",Arial,"Liberation Sans",helvetica,sans-serif;font-size-adjust:0.455;font-size:150%;font-weight:normal;line-height:100%;}
+.editormode a[href="/broken_link"]{padding:1ex;background:yellow;border:solid red 2px;}
+.article-edit-head{background:#ccffcc;border:solid 1px #8b8;padding:1px;width:100%;}
+#menu li.editlink{background-color:#ccffcc;}
+.editormode .message{padding:4px;}
+.editormode .message.info{background:#ccffcc;border:2px solid #007700;}
+.editormode .message.error{background:#ffdddd;border:2px solid #770000;}
+.editormode div.editblock.link{background:#ccffcc;width:99%;text-align:right;}
+.editormode div.editblock.link a{color:#000;}
+.editormode form.editblock{display:inline;}
+.img_right_puff{float:right;margin:10px 0 10px 8px;}
+.img_left_puff{float:left;margin:10px 8px 10px 0;}
+.content-right .content-right .img_right_puff,.content-right .content-right .img_left_puff{margin-top:20px;}
+.newsTickerC1{width:100%;overflow:hidden;}
+.newsTickerC2{width:400%;}
+.newsTickerC3{display:inline-block;width:25%;overflow:hidden;background:#bcbcbc url("../images/newsticker-bkgr.png");background-repeat:repeat-x;background-position:center bottom;height:25px;position:relative;}
+.newTickerContainer{overflow:hidden;width:100%;background:#bcbcbc url("../images/newsticker-bkgr.png");background-repeat:repeat-x;background-position:center bottom;height:25px;position:relative;}
+.newsTickerLink{display:none;width:auto; vertical-align:top;background:#000;height:25px;position:relative;font-size:150%;}
+.newsTickerLink,.newsTickerLink a{color:#fff;font-family:ScalaSansWeb-CondBold,"Arial Narrow",Arial,"Liberation Sans",helvetica,sans-serif;font-size-adjust:0.47;font-stretch:condensed;font-weight:bold;}
+.newsTickerLinkPadding{margin:3px 10px;}
+@media only all{
+.newsTickerLink{display:inline-block;}}
+.newsTicker{position:relative;width:200%;margin:3px;margin-left:1ex;overflow:hidden;}
+.newsTicker span{position:relative;padding-right:15px;margin-right:15px;border-right:1px solid white;left:0;display:inline-block;color:white;margin-bottom:2ex;}
+.newsTicker span a,.newsTicker span a:visited{color:white;text-decoration:none;}
+.newsTicker span a:hover{text-decoration:underline;}
+.newsTickerBody{position:absolute;z-index:1;display:none;width:20em;border:0;background:#f7f7f7;color:#000;padding:5px;box-shadow:0px 3px 6px #000;border-radius:5px;}
+.switchDiv{overflow:hidden;max-width:100%;}
+.switchDiv div{width:100%;}
+.switchDivPagination{margin:5px auto 22px;width:100px;}
+.switchDivPagination li{float:left;list-style:none outside none;margin:0 1px;}
+.switchDivPagination li a{background-image:url("../images/paginationButtonsBlue.png");background-position:0 0;display:block;float:left;height:0;overflow:hidden;padding-top:13px;width:13px;}
+.switchDivPagination li.active a{background-position:0 -15px;}
+.switchDivPagination ul{padding:0px;}
+ul.linklist,ul.linklist li{list-style:none;list-style-image:none;margin:1em 0 1em 0em;padding:0 0 0 15px;}
+.divaList{font-family:ScalaSansWeb-Cond,"Arial Narrow",Arial,"Liberation Sans",helvetica,sans-serif;font-size-adjust:0.455;font-size:150%;font-weight:normal;line-height:100%;}
+.divaPublication{display:block;float:left;width:100%;}
+.divaPublication:nth-child(even){background:#EAEAEA;}
+.divaPublication:nth-child(odd){background:#FFFFFF;}
+.divaPublication div{float:left;left:100%;overflow:hidden;position:relative;padding:5px;}
+.divaAuthors{margin-left:-100%;width:20%;}
+.divaTitle{margin-left:-80%;width:50%;}
+.divaYear{margin-left:-30%;width:5%;}
+.divaFulltext{margin-left:-25%;width:5%;}
+.divaAltmetrics{margin-left:-20%;width:10%;}
+.divaISICites{margin-left:-10%;width:10%;}
+@media print{
+div.forumthreads table .forumtoolbar{display:none;}
+div.forumpost div.postfooter .reply{display:none;}
+div.backToForum{display:none;}
+div.forumpost{margin-bottom:1ex;}
+div.forumpost .date{font-style:italic;color:#333;}
+div.forumthreads forumtoolbar{display:none;}
+.forumpost{border:solid #789eb8 1px;margin:1em;}
+div.forumpost{page-break-inside:avoid;}}
+@media screen and (max-device-width:767px){
+div.informationbox{width:70%;margin:0 auto;}}

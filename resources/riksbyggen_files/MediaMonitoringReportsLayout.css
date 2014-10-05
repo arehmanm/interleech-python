@@ -1,0 +1,106 @@
+﻿.DrReportMainPanel 
+{
+    width: 940px
+}
+
+.DrReportTopRightLayout 
+{
+    
+}
+
+.DrReportBottomRightLayout 
+{
+    
+}
+
+.DrReportRealEstateExplorerPanel 
+{
+    position: relative; 
+    float: left;
+    border: 1px solid #cccccc;
+    width: 220px
+}
+
+.DrReportRealEstateTree
+{
+    
+}
+
+.DrReportPresentationPanel
+{
+    position: relative; 
+    float: right; 
+    top: 0px; 
+    left: 0px; 
+    width: 702px;                       
+    padding-top: 0px
+}
+
+.DrReportMenuMeasuringKindsPanel
+{
+    position: relative; 
+    top: 0px; 
+    left: 0px; 
+    width: 700px; 
+    height: 27px;
+    border: 1px solid #f1f1ef; 
+    background-image: url(~/internet/images/Bg_Menu.gif);
+    background-repeat: repeat-x
+}
+
+.DrReportCheckBoxMeasurePointsPanel 
+{
+    position: absolute; 
+    top: 4px; 
+    white-space: nowrap; 
+    left: 590px
+}
+
+.DrReportChartPanel
+{
+    position: relative; 
+    top: 0; 
+    left: 0px; 
+    width: 702px
+}
+
+.DrReportMeasuringPointsPanel
+{
+    position: relative; 
+    top: 0; 
+    left: 0px; 
+    width: 702px
+}
+
+.DrReportGridHeader
+{
+    
+}
+
+.DrReportGridHeaderPartYearPanel 
+{
+    position: relative; 
+    top: 12px; 
+    left: 375px; 
+    width: 160px; 
+    white-space: nowrap
+}
+
+.DrReportGridHeaderWholeYearPanel 
+{
+    position: relative; 
+    top: 0px; 
+    left: 540px; 
+    width: 125px; 
+    white-space: nowrap
+}
+
+.DrReportPresentationDataGridPanel 
+{
+    position: relative; 
+    top: 0px; 
+    left: 0px;
+    width: 702px
+}
+
+
